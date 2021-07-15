@@ -1,0 +1,21 @@
+.tags-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #202428;
+}
+
+header {
+  padding: 0.5rem;
+}
+
+.sidebar-tag-element {
+  padding: 0.5rem;
+  a {
+    color: #202428;
+  }
+}
+
+.followed-tags {
+  height: 42vh;
+  overflow-y: auto;
+}
