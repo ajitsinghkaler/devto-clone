@@ -10,6 +10,7 @@ import { ArticleCardComponent } from './articles/article-card/article-card.compo
 import { ArticleContainerComponent } from './articles/article-container/article-container.component';
 import { ArticleHeaderComponent } from './articles/article-header/article-header.component';
 import { HomeComponent } from './home.component';
+import { LetModule, PushModule } from '@rx-angular/template';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { HomeComponent } from './home.component';
     HomeComponent,
   ],
   imports: [
+    LetModule,
+    PushModule,
     CommonModule,
     RouterModule.forChild([
       {

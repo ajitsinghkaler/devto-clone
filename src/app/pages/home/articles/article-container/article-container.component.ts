@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ArticleStore } from '../services/article.store';
 
 @Component({
   selector: 'app-article-container',
   templateUrl: './article-container.component.html',
-  styleUrls: ['./article-container.component.scss']
+  styleUrls: ['./article-container.component.scss'],
 })
-export class ArticleContainerComponent implements OnInit {
+export class ArticleContainerComponent {
+  articles$ = this.articleStore.articles$;
+  featuredArticle$ = this.articleStore.featuredArticle$;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(private articleStore: ArticleStore) {}
 }
