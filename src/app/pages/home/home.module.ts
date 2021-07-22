@@ -11,6 +11,7 @@ import { ArticleContainerComponent } from './articles/article-container/article-
 import { ArticleHeaderComponent } from './articles/article-header/article-header.component';
 import { HomeComponent } from './home.component';
 import { LetModule, PushModule } from '@rx-angular/template';
+import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LetModule, PushModule } from '@rx-angular/template';
     ArticleContainerComponent,
     ArticleHeaderComponent,
     HomeComponent,
+    DateagoPipe
   ],
   imports: [
     LetModule,

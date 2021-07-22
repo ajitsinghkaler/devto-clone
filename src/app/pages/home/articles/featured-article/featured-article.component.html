@@ -1,1 +1,3 @@
-<pre>{{featured|json}}</pre>
+<a class="featured-img" style.background-image="url({{featured?.cover_image}})"></a>
+<!-- Todo make featured title big -->
+<app-article-card *ngIf="featured" [article]="featured"></app-article-card>

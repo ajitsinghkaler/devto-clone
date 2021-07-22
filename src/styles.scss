@@ -9,6 +9,7 @@ body {
   padding-top: var(--header-height);
   font-size: 1rem;
   background-color: #eef0f1;
+  text-rendering: optimizeSpeed;
   line-height: 1.5;
   color: #08090a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -86,4 +87,26 @@ a {
 
 .m-0 {
   margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.lh-0 {
+  line-height: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul[class], ol[class]{
+  list-style: none;
 }
