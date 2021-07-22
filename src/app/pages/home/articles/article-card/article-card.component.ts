@@ -9,6 +9,7 @@ import { Article } from 'src/app/models/articles';
 export class ArticleCardComponent implements OnInit {
   @Input() article!: Article;
   constructor() {}
+  
 
   ngOnInit(): void {
   }

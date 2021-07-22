@@ -12,7 +12,12 @@
     </div>
     <div class="article-body">
         <!-- Todo check spacing is 36px but should be 30px -->
-        <h3 class="article-title m-0">{{article.title}}</h3>
+        <span #ref>
+            <ng-content></ng-content>
+        </span>
+        <ng-container *ngIf="!ref.hasChildNodes()">
+            <h3 class="article-title m-0">{{article.title}}</h3>
+        </ng-container>
         <div class="flex article-tags">
             <a class="article-tag" *ngFor="let tag of article.tag_list">
                 #{{tag}}
