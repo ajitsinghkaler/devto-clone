@@ -1,5 +1,5 @@
-import { Organization } from "./Organisation";
-import { User } from "./User";
+import { Organization } from "./organisation";
+import { User } from "./user";
 
 export interface Article {
   type_of: string;

@@ -11,6 +11,6 @@ export class ArticleApiService {
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${environment.baseApi}articles`);
+    return this.http.get<Article[]>(`${environment.baseApi}/articles`);
   }
 }
