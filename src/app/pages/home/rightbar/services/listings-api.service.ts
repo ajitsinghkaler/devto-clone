@@ -11,6 +11,6 @@ export class ListingsApiService {
   constructor(private http: HttpClient) { }
 
   getListing(): Observable<Listing[]> {
-    return this.http.get<Listing[]>(`${environment.baseApi}/listings?per_page=10`);
+    return this.http.get<Listing[]>(`${environment.baseApi}/listings?per_page=5 `);
   }
 }
