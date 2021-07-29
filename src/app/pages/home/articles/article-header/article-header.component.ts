@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TABS } from 'src/app/constants/app.contants';
 
 @Component({
   selector: 'app-article-header',
   templateUrl: './article-header.component.html',
   styleUrls: ['./article-header.component.scss'],
 })
-export class ArticleHeaderComponent implements OnInit {
+export class ArticleHeaderComponent {
   selectedTab = 'feed';
-  tabs = ['feed', 'week', 'month', 'year', 'infinity', 'latest'];
+  tabs = TABS;
   constructor() {}
-
-  ngOnInit(): void {}
 }
