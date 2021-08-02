@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
-import { Listings } from 'src/app/models/Listings';
+import { Listings } from 'src/app/models/listings';
 import { ListingsApiService } from './listings-api.service';
 
 interface ListingsState {
@@ -12,12 +12,10 @@ interface ListingsState {
   providedIn: 'root',
 })
 export class ListingsStore extends ComponentStore<ListingsState> {
-  readonly listings$: Observable<Listings> = this.select(
-    (state) => {
-      console.log(state,'state');
-      return state.listings
-    }
-  );
+
+  readonly listings$: Observable<Listings> = this.select((state) => {
+    return state.listings;
+  });
   readonly addListings = this.updater((state, listings: Listings) => ({
     listings: [...state.listings, ...listings],
   }));
@@ -26,11 +24,10 @@ export class ListingsStore extends ComponentStore<ListingsState> {
     super({ listings: [] });
   }
 
-  readonly getArticles = this.effect(() =>
+  readonly getListings = this.effect(() =>
     this.listingsApiS.getListings().pipe(
       tapResponse(
         (listings) => {
-          console.log(listings);
           return this.addListings(listings.result);
         },
         (error) => this.logError(error)

@@ -12,10 +12,6 @@ export class MasonaryDirective implements OnInit, OnDestroy {
     return Array.from(this.gridElement.nativeElement.children);
   }
 
-  ngDoCheck() {
-    console.log('DoCheck...');
-  }
-
   ngOnInit() {
     this.observer = new MutationObserver(() => {
       this.cardElments.forEach((cardElement) => {

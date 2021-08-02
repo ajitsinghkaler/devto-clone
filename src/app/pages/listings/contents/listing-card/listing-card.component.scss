@@ -5,36 +5,24 @@
   box-shadow: 0 0 0 1px rgba(8, 9, 10, 0.1);
   overflow-wrap: anywhere;
 }
+
 .listing-card {
-  position: relative;
   padding: 1rem;
-}
-.listing-header-title {
-  padding-right: 48px;
 }
 
 .listing-header-title {
+  padding-right: 3rem;
+  margin-top: 0;
+  margin-bottom: 4px;
   line-height: 1.25;
+  a{
+    color: #202428;
+  }
   a:hover {
     color: #323ebe;
   }
 }
-::ng-deep .listing-card-body {
-  p {
-    margin: 0;
-    word-break: break-word;
-  }
-}
-.negative-margin {
-  margin-left: -4px;
-}
-h2 {
-  margin-top: 0;
-  margin-bottom: 4px;
-}
-a {
-  color: #202428;
-}
+
 .listing-card-header {
   margin-bottom: 12px;
 }
@@ -45,9 +33,21 @@ time {
 .listing-card-body {
   margin-bottom: 1rem;
 }
+/*ng-deep required here since we are using encapsulated view for current component.
+It will not allow our innerHTML element style to be overriden unless we use ng-deep
+*/
+::ng-deep .listing-card-body {
+  p {
+    margin: 0;
+    word-break: break-word;
+  }
+}
+.n-m {
+  margin-left: -4px;
+}
 
-.listing-category {
-  line-height: 1.125rem;
+.author-listing-category {
+  line-height: 1.12rem;
   margin: 0;
   a {
     font-size: 0.75rem;
@@ -78,9 +78,6 @@ time {
   font-weight: normal;
 }
 
-.author-profile {
-  position: relative;
-}
 .author-profile::after {
   content: "";
   border: 1px solid #08090a;
@@ -109,7 +106,18 @@ time {
   width: 2rem;
   display: inline-block;
   border-radius: 100%;
-  position: relative;
   background-color: #64707d;
   height: 2rem;
+}
+.listing-dropdown{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.listing-dropdown-btn{
+  padding:0.5rem;
+  background: rgba(0,0,0,0);
+  &:hover{
+    background: rgba(0,0,0,0.04);
+  }
 }

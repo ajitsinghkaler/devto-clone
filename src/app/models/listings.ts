@@ -25,6 +25,6 @@
 
 
 
-
+export type ListingsReponse = {result:Listings};
 
 export type Listings = Listings[];

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ListingsStore } from '../service/listings-store';
 
 @Component({
@@ -12,6 +13,7 @@ export class ListingsContentComponent implements OnInit {
   constructor(private listingsStore:ListingsStore) { }
 
   ngOnInit(): void {
+
   }
 
 }
