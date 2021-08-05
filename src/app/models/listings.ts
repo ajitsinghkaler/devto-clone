@@ -22,9 +22,7 @@
       tags: string[];
       author: Author;
   }
-
-
-
+  
 export type ListingsReponse = {result:Listings};
 
-export type Listings = Listings[];
+export type Listings = Listing[];

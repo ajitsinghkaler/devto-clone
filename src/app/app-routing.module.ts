@@ -15,10 +15,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'listings',
-        loadChildren: async () =>
-          await (
-            await import('./pages/listings/listings.module')
-          ).ListingsModule,
+        loadChildren: () =>
+          import('./pages/listings/listings.module').then((m) => m.ListingsModule),
       },
     ],
   },

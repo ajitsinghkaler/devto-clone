@@ -4,7 +4,11 @@ import { Directive, ElementRef, OnDestroy, OnInit } from '@angular/core';
   selector: '[appMasonary]',
 })
 export class MasonaryDirective implements OnInit, OnDestroy {
-  private observer!: MutationObserver;
+  private observer = new MutationObserver(() => {
+    this.cardElments.forEach((cardElement) => {
+      this.resizeMasonryItem(cardElement as HTMLElement);
+    });
+  });
 
   constructor(private gridElement: ElementRef) {}
 
@@ -13,11 +17,6 @@ export class MasonaryDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.observer = new MutationObserver(() => {
-      this.cardElments.forEach((cardElement) => {
-        this.resizeMasonryItem(cardElement as HTMLElement);
-      });
-    });
     this.observer.observe(this.gridElement.nativeElement, { childList: true });
   }
 
