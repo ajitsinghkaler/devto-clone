@@ -6,7 +6,7 @@
         </a>
         <div class="article-meta">
             <p routerLink="/{{article.user.username}}/" class="m-0"><a>{{article.user.name}}</a></p>
-            <a routerLink="/{{article.user.username}}/{{article.slug}}"
+            <a routerLink="/{{uriSection}}/{{article.slug}}"
                 class="article-time lh-0"><time>{{article.published_timestamp|date:'MMM d'}}
                     {{article.published_timestamp|dateago}}</time></a>
         </div>
@@ -16,7 +16,7 @@
             <ng-content></ng-content>
         </span>
         <ng-container *ngIf="!ref.hasChildNodes()">
-            <h3 routerLink="/{{article.user.username}}/{{article.slug}}" class="article-title m-0">{{article.title}}
+            <h3 routerLink="/{{uriSection}}/{{article.slug}}" class="article-title m-0">{{article.title}}
             </h3>
         </ng-container>
         <div class="flex article-tags">
@@ -25,7 +25,7 @@
             </a>
         </div>
         <div class="article-bottom flex justify-between align-center">
-            <div routerLink="/{{article.user.username}}/{{article.slug}}" class="flex article-bottom-button">
+            <div routerLink="/{{uriSection}}/{{article.slug}}" class="flex article-bottom-button">
                 <a *ngIf="article.public_reactions_count" class="article-stats">
                     <svg class="article-button-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                         <path
