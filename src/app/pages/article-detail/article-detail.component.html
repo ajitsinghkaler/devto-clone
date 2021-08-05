@@ -1,0 +1,5 @@
+<app-reactions></app-reactions>
+<ng-container *rxLet="article$;let article">
+    <app-article-details *ngIf="article" [article]="article"></app-article-details>
+</ng-container>
+<app-user-detail></app-user-detail>

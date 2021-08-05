@@ -1,12 +1,13 @@
 <article>
     <div class="flex article-header">
-        <a class="lh-0" routerLink="/{{article.user.username}}">
+        <a class="lh-0" routerLink="/{{article.user.username}}/">
             <img class="article-avatar-image" [src]="article.user.profile_image_90"
                 alt="{{article.user.username}} profile" loading="lazy">
         </a>
         <div class="article-meta">
-            <p class="m-0"><a>{{article.user.name}}</a></p>
-            <a class="article-time lh-0"><time>{{article.published_timestamp|date:'MMM d'}}
+            <p routerLink="/{{article.user.username}}/" class="m-0"><a>{{article.user.name}}</a></p>
+            <a routerLink="/{{article.user.username}}/{{article.slug}}"
+                class="article-time lh-0"><time>{{article.published_timestamp|date:'MMM d'}}
                     {{article.published_timestamp|dateago}}</time></a>
         </div>
     </div>
@@ -15,15 +16,16 @@
             <ng-content></ng-content>
         </span>
         <ng-container *ngIf="!ref.hasChildNodes()">
-            <h3 class="article-title m-0">{{article.title}}</h3>
+            <h3 routerLink="/{{article.user.username}}/{{article.slug}}" class="article-title m-0">{{article.title}}
+            </h3>
         </ng-container>
         <div class="flex article-tags">
-            <a class="article-tag" *ngFor="let tag of article.tag_list">
+            <a routerLink="/{{tag}}/" class="article-tag" *ngFor="let tag of article.tag_list">
                 #{{tag}}
             </a>
         </div>
         <div class="article-bottom flex justify-between align-center">
-            <div class="flex article-bottom-button">
+            <div routerLink="/{{article.user.username}}/{{article.slug}}" class="flex article-bottom-button">
                 <a *ngIf="article.public_reactions_count" class="article-stats">
                     <svg class="article-button-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                         <path

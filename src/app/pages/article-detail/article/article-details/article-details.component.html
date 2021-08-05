@@ -1,0 +1,44 @@
+<article class="card article mb-4">
+    <header>
+        <div class="article-cover">
+            <img *ngIf="article.cover_image" [src]="article.cover_image" width="1000" height="420"
+                style="background-color:#dddddd;" alt="Cover image for {{article.title}}">
+        </div>
+
+        <div class="article-header">
+            <h1>
+                {{article.title}}
+            </h1>
+            <div class="flex article-tags">
+                <a class="article-tag" *ngFor="let tag of article.tags">
+                    #{{tag}}
+                </a>
+            </div>
+
+            <div class="article-subheader flex">
+                <a href="/{{article.user.username}}" class="flex items-center">
+                    <div class="article-avatar"><img class="crayons-avatar__image"
+                            [src]="article.user.profile_image_90" alt=""></div>
+                    <div class="article-user-name">{{article.user.name}}</div>
+                </a>
+
+                <span>
+                    <time datetime="2021-08-04T15:38:54Z" class="date-no-year"
+                        title="Wednesday, 4 August 2021, 21:08:54">{{article.readable_publish_date}}</time>
+
+
+                    <span class="mr-4">・{{article.reading_time_minutes}} min read</span>
+                </span>
+                <span id="action-space" class="mb-4 s:mb-0"></span>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="article-body" [innerHTML]="article?.body_html">
+
+    </div>
+    <app-comments></app-comments>
+
+
+</article>

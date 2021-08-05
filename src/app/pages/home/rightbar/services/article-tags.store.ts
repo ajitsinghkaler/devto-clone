@@ -25,7 +25,7 @@ export class ArticleTagsStore extends ComponentStore<ArticlesState> {
     (params: Observable<Record<string, string | number | boolean>>) =>
       params.pipe(
         switchMap((params) =>
-          this.articleApiS.getArticles(params).pipe(
+          this.articleApiS.getArticles({ ...params, top: 3 }).pipe(
             tapResponse(
               (articles) => this.setArticles(articles),
               (error) => this.logError(error)

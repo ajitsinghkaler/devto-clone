@@ -21,7 +21,6 @@ export class ArticleApiService {
 
   createObjectToParams(params?: Record<string, string | number | boolean>) {
     let requestParams = new HttpParams({ fromObject: params });
-    if(params) requestParams = requestParams.set('top', 3);
     return requestParams.toString();
   }
 
