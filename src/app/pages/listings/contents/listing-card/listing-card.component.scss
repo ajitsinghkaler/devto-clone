@@ -41,6 +41,9 @@ It will not allow our innerHTML element style to be overriden unless we use ng-d
     margin: 0;
     word-break: break-word;
   }
+  blockquote{
+    margin: 0;
+  }
 }
 .n-m {
   margin-left: -4px;
@@ -58,10 +61,15 @@ It will not allow our innerHTML element style to be overriden unless we use ng-d
 .author-name-link {
   font-weight: 500;
   font-size: 0.875rem;
+  color: #08090a;
+}
+.author-name-link:hover{
+  color: #323ebe;
 }
 
 .listing-tags {
   font-size: 0.875rem;
+  min-height: 1rem;
 }
 .listing-tag-link:hover {
   color: #08090a;
@@ -111,10 +119,15 @@ It will not allow our innerHTML element style to be overriden unless we use ng-d
 }
 .listing-dropdown{
   position: absolute;
+  display: none;
   right: 0;
   top: 0;
 }
-// TODO: need to check whether this class required or not.
+
+.listing-card:hover .listing-dropdown {
+  display: block
+}
+
 .listing-dropdown-btn{
   padding:0.5rem;
   background: rgba(0,0,0,0);

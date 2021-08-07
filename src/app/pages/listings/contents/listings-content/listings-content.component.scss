@@ -1,7 +1,7 @@
 .listing-container{
     font-size: 16px;
 }
-.l{
+.listings-cards{
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
