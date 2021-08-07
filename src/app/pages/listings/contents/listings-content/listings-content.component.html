@@ -1,7 +1,5 @@
 <div class="listing-container">
-    <div class="l" appMasonary>
-        <!-- <ng-container> -->
+    <div class="listings-cards" appMasonary>
             <app-listing-card  *ngFor="let listing of listingStore$|push" [attr.id]="listing.id" [listing]="listing" ></app-listing-card>
-        <!-- </ng-container> -->
     </div>
 </div>
