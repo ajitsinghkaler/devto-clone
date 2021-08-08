@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map, tap } from 'rxjs/operators';
 import { ListingsStore } from '../service/listings-store';
 
 @Component({
@@ -8,12 +9,13 @@ import { ListingsStore } from '../service/listings-store';
   styleUrls: ['./listings-content.component.scss']
 })
 export class ListingsContentComponent implements OnInit {
-  listingStore$ = this.listingsStore.listings$;
+  hasPagination = false;
+  listingStore$ = this.listingsStore.listings$.pipe(tap(listing=>this.hasPagination = listing?.length === 75));
 
-  constructor(private listingsStore:ListingsStore) { }
+  constructor(private listingsStore:ListingsStore,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-
-  }
+    this.listingsStore.getListings(this.activatedRoute.params.pipe((map((param)=>param.category))));
+  } 
 
 }

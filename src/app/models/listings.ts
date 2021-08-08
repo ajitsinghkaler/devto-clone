@@ -26,3 +26,5 @@
 export type ListingsReponse = {result:Listings};
 
 export type Listings = Listing[];
+
+export type ListingCategory = undefined | "cfp" | "forhire" | "collabs" | "education" | "jobs" | "mentors" | "products" | "mentees" | "forsale" | "events" | "misc";

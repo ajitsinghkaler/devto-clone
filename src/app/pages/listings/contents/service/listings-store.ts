@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
-import { Listings } from 'src/app/models/listings';
+import { switchMap } from 'rxjs/operators';
+import { ListingCategory, Listings } from 'src/app/models/listings';
 import { ListingsApiService } from './listings-api.service';
 
 interface ListingsState {
@@ -12,7 +13,6 @@ interface ListingsState {
   providedIn: 'root',
 })
 export class ListingsStore extends ComponentStore<ListingsState> {
-
   readonly listings$: Observable<Listings> = this.select((state) => {
     return state.listings;
   });
@@ -20,19 +20,29 @@ export class ListingsStore extends ComponentStore<ListingsState> {
     listings: [...state.listings, ...listings],
   }));
 
+  readonly loadListings = this.updater((_, listings: Listings) => ({
+    listings: [...listings],
+  }));
+
   constructor(private listingsApiS: ListingsApiService) {
     super({ listings: [] });
   }
 
-  readonly getListings = this.effect(() =>
-    this.listingsApiS.getListings().pipe(
-      tapResponse(
-        (listings) => {
-          return this.addListings(listings.result);
-        },
-        (error) => this.logError(error)
-      )
-    )
+  getListings = this.effect(
+    (activatedRoute$: Observable<ListingCategory>) => {
+      return activatedRoute$.pipe(
+        switchMap((categoryParam) => {
+          return this.listingsApiS.getListings(categoryParam).pipe(
+            tapResponse(
+              (listings) => {
+                return this.loadListings(listings.result);
+              },
+              (error) => this.logError(error)
+            )
+          );
+        })
+      );
+    }
   );
 
   logError(error: unknown) {

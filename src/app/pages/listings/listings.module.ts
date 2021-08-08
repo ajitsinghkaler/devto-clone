@@ -24,8 +24,19 @@ import { ListingCardComponent } from './contents/listing-card/listing-card.compo
     PushModule,
     RouterModule.forChild([{
       path:'',
-      component:ListingsComponent
-    }]),
+      component:ListingsComponent,
+      children:[
+        {
+          path:':category',
+          component:ListingsContentComponent
+        },
+        {
+          path:'',
+          component:ListingsContentComponent
+        }
+      ]
+    }
+  ]),
     CommonModule
   ]
 })
