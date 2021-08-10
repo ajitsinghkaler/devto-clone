@@ -9,6 +9,8 @@ import { ReactionsComponent } from './article/reactions/reactions.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
 import { ArticleDetailComponent } from './article-detail.component';
 import { LetModule, PushModule } from '@rx-angular/template';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { LetModule, PushModule } from '@rx-angular/template';
     CommonModule,
     LetModule,
     PushModule,
+    HttpClientModule
   ]
 })
 export class ArticleDetailModule { }
