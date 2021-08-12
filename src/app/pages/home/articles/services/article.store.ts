@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
+import { ArticleApiService } from 'src/app/global/services/article/article-api.service';
 import { Article } from '../../../../models/articles';
-import { ArticleApiService } from './article-api.service';
 
 interface ArticlesState {
   articles: Article[];
@@ -16,7 +16,7 @@ export class ArticleStore extends ComponentStore<ArticlesState> {
   readonly featuredArticle$ = this.select((state) => state.featured);
   readonly setArticles = this.updater(
     (state: ArticlesState, articles: Article[]) => {
-      let index: number = 0;
+      let index = 0;
       articles.find((article, idx) => {
         index = idx;
         return article.cover_image;

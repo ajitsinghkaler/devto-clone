@@ -31,7 +31,7 @@ export class ArticleDetailStore extends ComponentStore<ArticleState> {
         )
       )
   );
-  constructor(private articleDetailApiS: ArticleDetailApiService, private route: ActivatedRoute) {
+  constructor(private articleDetailApiS: ArticleDetailApiService) {
     super({ article: null });
   }
 
