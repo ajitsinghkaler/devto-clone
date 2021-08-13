@@ -1,0 +1,137 @@
+:host {
+  border-radius: 5px;
+  background: #fff;
+  color: #08090a;
+  box-shadow: 0 0 0 1px rgba(8, 9, 10, 0.1);
+  overflow-wrap: anywhere;
+}
+
+.listing-card {
+  padding: 1rem;
+}
+
+.listing-header-title {
+  padding-right: 3rem;
+  margin-top: 0;
+  margin-bottom: 4px;
+  line-height: 1.25;
+  a{
+    color: #202428;
+  }
+  a:hover {
+    color: #323ebe;
+  }
+}
+
+.listing-card-header {
+  margin-bottom: 12px;
+}
+time {
+  color: #64707d;
+  font-size: 0.85em;
+}
+.listing-card-body {
+  margin-bottom: 1rem;
+}
+/*ng-deep required here since we are using encapsulated view for current component.
+It will not allow our innerHTML element style to be overriden unless we use ng-deep
+*/
+::ng-deep .listing-card-body {
+  p {
+    margin: 0;
+    word-break: break-word;
+  }
+  blockquote{
+    margin: 0;
+  }
+}
+.n-m {
+  margin-left: -4px;
+}
+
+.author-listing-category {
+  line-height: 1.12rem;
+  margin: 0;
+  a {
+    font-size: 0.75rem;
+    color: #64707d;
+  }
+}
+
+.author-name-link {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #08090a;
+}
+.author-name-link:hover{
+  color: #323ebe;
+}
+
+.listing-tags {
+  font-size: 0.875rem;
+  min-height: 1rem;
+}
+.listing-tag-link:hover {
+  color: #08090a;
+}
+.listing-tag-link {
+  padding: 4px;
+  color: #64707d;
+  display: inline-block;
+  line-height: 1.3;
+  border-radius: 5px;
+}
+.listing-tag-prefix {
+  opacity: 0.4;
+  font-weight: normal;
+}
+
+.author-profile::after {
+  content: "";
+  border: 1px solid #08090a;
+  opacity: 0.15;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  pointer-events: none;
+}
+
+.author-details {
+  font-size: 0.875rem;
+  gap: 8px;
+}
+.author-profile-img {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.author-profile {
+  width: 2rem;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: #64707d;
+  height: 2rem;
+}
+.listing-dropdown{
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 0;
+}
+
+.listing-card:hover .listing-dropdown {
+  display: block
+}
+
+.listing-dropdown-btn{
+  padding:0.5rem;
+  background: rgba(0,0,0,0);
+  &:hover{
+    background: rgba(0,0,0,0.04);
+  }
+}

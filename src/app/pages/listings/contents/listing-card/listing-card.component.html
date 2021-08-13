@@ -1,0 +1,41 @@
+<div class="listing-card relative">
+  <div class="listing-card-header relative">
+    <h2 class="listing-header-title">
+      <a href="">{{ listing.title }}</a>
+    </h2>
+    <time [attr.title]="listing.title" [attr.datetime]="listing.published">
+      {{ listing.bumped_at | date: "MMM d" }}
+    </time>
+    <div class="listing-tags n-m">
+      <a
+        class="listing-tag-link"
+        href=""
+        *ngFor="let tag of listing.tags; let i = index"
+      >
+        <span  class="listing-tag-prefix"
+          >#</span
+        >{{ tag }}
+      </a>
+    </div>
+    <div class="listing-dropdown">
+      <button class="btn listing-dropdown-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+      </button>
+    </div>
+  </div>
+  <div class="listing-card-body" [innerHTML]="listing.processed_html">
+  </div>
+ <div class="author-details flex align-center">
+      <a class="author-profile relative" href="">
+          <img width="32" height="32" class="author-profile-img" [src]="listing.author.profile_image_90" alt="">
+      </a>
+      <div class="author-name">
+        <a href="" class="author-name-link">
+            {{listing.author.name}}
+        </a>
+        <div class="author-listing-category">
+          <a href="">{{listing.category}}</a>
+        </div>
+      </div>
+  </div> 
+</div>

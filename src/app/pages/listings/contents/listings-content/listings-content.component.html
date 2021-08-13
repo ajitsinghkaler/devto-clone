@@ -1,0 +1,8 @@
+<div class="listing-container">
+    <div class="listings-cards" appMasonary>
+            <app-listing-card  *ngFor="let listing of listingStore$|push" [attr.id]="listing.id" [listing]="listing" ></app-listing-card>
+    </div>
+    <div class="flex justify-center" *ngIf="hasPagination">
+        <button class="secondary-button">Load More...</button>
+    </div>
+</div>
