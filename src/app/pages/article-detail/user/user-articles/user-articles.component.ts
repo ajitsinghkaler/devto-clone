@@ -18,8 +18,8 @@ export class UserArticlesComponent {
         index = idx;
         return article.id === articleDetails?.id;
       });
-      articles.splice(index + 1, 1);
-      return articles.slice(0,3);
+      articles.splice(index, 1);
+      return articles.slice(0, 3);
     })
   );
   constructor(

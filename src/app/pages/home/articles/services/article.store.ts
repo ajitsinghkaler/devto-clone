@@ -21,7 +21,7 @@ export class ArticleStore extends ComponentStore<ArticlesState> {
         index = idx;
         return article.cover_image;
       });
-      let featured = articles.splice(index + 1, 1)[0];
+      let featured = articles.splice(index, 1)[0];
       return {
         ...state,
         featured: featured,
