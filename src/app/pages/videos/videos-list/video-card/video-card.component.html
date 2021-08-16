@@ -1,0 +1,10 @@
+<div class="video-collection" id="{{video.id}}">
+<a class="single-video-article single-article" href="{{video.path}}" >
+    <div class="video-image" [ngStyle]="{'background-image': 'url(' + video.cloudinary_video_url + ')'}">
+      <span class="video-timestamp">{{video.video_duration_in_minutes}}</span>
+    </div>
+    <p><strong>{{video.title}}</strong></p>
+    <p class="video-username">{{video.user.name}}</p>
+</a>
+</div>
+ 

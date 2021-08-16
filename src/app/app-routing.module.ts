@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     component: ContainerComponent,
     children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home',
         loadChildren: () =>
@@ -19,11 +20,17 @@ const routes: Routes = [
             (m) => m.ArticleDetailModule
           ),
       },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {
+        path: 'videos',
+        loadChildren: () =>
+          import('./pages/videos/videos.module').then((m) => m.VideosModule),
+      },
       {
         path: 'listings',
         loadChildren: () =>
-          import('./pages/listings/listings.module').then((m) => m.ListingsModule),
+          import('./pages/listings/listings.module').then(
+            (m) => m.ListingsModule
+          ),
       },
     ],
   },
