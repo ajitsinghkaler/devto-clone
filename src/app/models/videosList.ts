@@ -1,6 +1,3 @@
-import { Organization } from "./organisation";
-import { User } from "./user";
-
 export interface VideosList {
   cloudinary_video_url: string,
   id: number,
