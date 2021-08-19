@@ -9,7 +9,7 @@ import { UserArticlesStore } from './user/services/user-articles.store';
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
-  providers: [ArticleDetailStore,UserStore],
+  providers: [ArticleDetailStore, UserStore],
 })
 export class ArticleDetailComponent implements OnInit {
   article$ = this.articleDetailStore.article$.pipe(
@@ -17,17 +17,17 @@ export class ArticleDetailComponent implements OnInit {
       if (article?.user) {
         this.userStore.getUser(article.user.username);
         this.articleUserStore.getArticles({ username: article.user.username });
-        this.articleDetailStore.getReactions(article.id)
+        this.articleDetailStore.getReactions(article.id);
       }
     })
   );
+  reaction$ = this.articleDetailStore.reaction$;
   user$ = this.userStore.user$;
-  reaction$ = this.articleDetailStore.reaction$.pipe(tap(console.log));
   constructor(
     private articleDetailStore: ArticleDetailStore,
     private route: ActivatedRoute,
     private userStore: UserStore,
-    private articleUserStore: UserArticlesStore
+    private articleUserStore: UserArticlesStore,
   ) {}
 
   ngOnInit(): void {
