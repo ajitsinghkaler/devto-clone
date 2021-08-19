@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  border-width: 0;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: #eef0f1;
+  padding: 2rem 4rem;
+}
+.subscribe-btn {
+  border-radius: 5px;
+  padding: calc(0.5rem - 2px) calc(1rem - 2px);
+  border: 2px solid #d2d6db;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  color: #363d44;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.035);
+    border-color: #99a3ad;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    color: #08090a;
+    z-index: 1;
+  }
+}

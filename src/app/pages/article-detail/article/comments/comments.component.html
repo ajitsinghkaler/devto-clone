@@ -1,1 +1,13 @@
-<p>comments works!</p>
+<header class="flex justify-between">
+    <h2>Discussion <span>(4)</span></h2>
+    <button class="subscribe-btn btn" type="button">Subscribe</button>
+</header>
+<div *rxLet="comments$;let comments" class="comments">
+    <details *ngFor="let comment of comments" class="comments-wrapper" open="">
+        <summary>
+            {{comment.user.name}}
+        </summary>
+        <div [innerHtml]="comment.body_html">
+        </div>
+    </details>
+</div>
