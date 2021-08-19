@@ -24,6 +24,13 @@ app-article-details {
 
   .article-body {
     padding: 2rem 4rem;
+    img{
+      width: 100%;
+    }
+
+    .highlight{
+      width: 100%;
+    }
   }
   .article-header {
     padding: 2rem 4rem 0 4rem;
