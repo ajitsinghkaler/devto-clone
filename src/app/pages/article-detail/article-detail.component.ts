@@ -9,26 +9,28 @@ import { UserArticlesStore } from './user/services/user-articles.store';
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
-  providers: [ArticleDetailStore],
+  providers: [ArticleDetailStore,UserStore],
 })
 export class ArticleDetailComponent implements OnInit {
-  article$ = this.articleStore.article$.pipe(
+  article$ = this.articleDetailStore.article$.pipe(
     tap((article) => {
       if (article?.user) {
         this.userStore.getUser(article.user.username);
         this.articleUserStore.getArticles({ username: article.user.username });
+        this.articleDetailStore.getReactions(article.id)
       }
     })
   );
   user$ = this.userStore.user$;
+  reaction$ = this.articleDetailStore.reaction$.pipe(tap(console.log));
   constructor(
-    private articleStore: ArticleDetailStore,
+    private articleDetailStore: ArticleDetailStore,
     private route: ActivatedRoute,
     private userStore: UserStore,
     private articleUserStore: UserArticlesStore
   ) {}
 
   ngOnInit(): void {
-    this.articleStore.getArticle(this.route.params);
+    this.articleDetailStore.getArticle(this.route.params);
   }
 }

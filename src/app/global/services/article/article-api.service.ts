@@ -13,7 +13,7 @@ export class ArticleApiService {
   getArticles(
     params?: Record<string, string | number | boolean>
   ): Observable<Article[]> {
-    const newParams = new HttpParams({ fromObject: params }).toString()
+    const newParams = new HttpParams({ fromObject: params }).toString();
     return this.http.get<Article[]>(
       `${environment.baseApi}/articles?${newParams}`
     );
