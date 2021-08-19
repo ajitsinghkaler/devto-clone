@@ -15,7 +15,6 @@ import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
 import { ListingsComponent } from './rightbar/listings/listings.component';
 import { RightbarContainerComponent } from './rightbar/rightbar-container/rightbar-container.component';
 import { TagArticleComponent } from './rightbar/tag-article/tag-article.component';
-
 @NgModule({
   declarations: [
     SidebarComponent,

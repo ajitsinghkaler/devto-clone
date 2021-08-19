@@ -1,0 +1,17 @@
+<ng-container *rxLet="userArticles$; let articles;let err=$error">
+    <section>
+        <header class="flex align-center">
+            <h3>More From <a>{{name}}</a></h3>
+        </header>
+        <a *ngFor="let article of articles" class="listing-item" href="/listings/forhire/react-js-195j">
+            <div class="title">{{article.title}}</div>
+            <div class="flex article-tags">
+                <span class="article-tag" *ngFor="let tag of article.tag_list">
+                    #{{tag}}
+                </span>
+            </div>
+        </a>
+        <ng-template #suspense>loading</ng-template>
+        <ng-template #error>loading</ng-template>
+    </section>
+</ng-container>

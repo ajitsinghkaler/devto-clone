@@ -28,21 +28,19 @@ export class ListingsStore extends ComponentStore<ListingsState> {
     super({ listings: [] });
   }
 
-  getListings = this.effect(
-    (activatedRoute$: Observable<ListingCategory>) => {
-      return activatedRoute$.pipe(
-        switchMap((categoryParam) => {
-          return this.listingsApiS.getListings(categoryParam).pipe(
-            tapResponse(
-              (listings) => {
-                return this.loadListings(listings.result);
-              },
-              (error) => this.logError(error)
-            )
-          );
-        })
-      );
-    }
+  getListings = this.effect((activatedRoute$: Observable<ListingCategory>) =>
+    activatedRoute$.pipe(
+      switchMap((categoryParam) =>
+        this.listingsApiS.getListings(categoryParam).pipe(
+          tapResponse(
+            (listings) => {
+              return this.loadListings(listings.result);
+            },
+            (error) => this.logError(error)
+          )
+        )
+      )
+    )
   );
 
   logError(error: unknown) {
