@@ -5,9 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './rightbar-container.component.html',
   styleUrls: ['./rightbar-container.component.scss'],
 })
-export class RightbarContainerComponent implements OnInit {
+export class RightbarContainerComponent {
   asideTags = ['news', 'help', 'discuss', 'challenge', 'meta'];
-  constructor() {}
-
-  ngOnInit(): void {}
 }

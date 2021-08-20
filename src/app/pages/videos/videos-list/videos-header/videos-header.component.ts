@@ -3,13 +3,6 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-videos-header',
   templateUrl: './videos-header.component.html',
-  styleUrls: ['./videos-header.component.scss']
+  styleUrls: ['./videos-header.component.scss'],
 })
-export class VideosHeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class VideosHeaderComponent {}
