@@ -16,18 +16,18 @@
             </div>
 
             <div class="article-subheader flex">
-                <a routerLink="/{{article.user.username}}" class="flex items-center">
-                    <div class="article-avatar"><img class="crayons-avatar__image"
-                            [src]="article.user.profile_image_90" alt=""></div>
+                <a routerLink="/{{article.user.username}}" class="flex align-center">
+                    <div class="article-avatar"><img class="crayons-avatar__image" [src]="article.user.profile_image_90"
+                            alt=""></div>
                     <div class="article-user-name">{{article.user.name}}</div>
                 </a>
 
-                <span>
+                <span class="subheader-meta-info flex align-center">
                     <time datetime="2021-08-04T15:38:54Z" class="date-no-year"
                         title="Wednesday, 4 August 2021, 21:08:54">{{article.readable_publish_date}}</time>
 
-
-                    <span class="mr-4">・{{article.reading_time_minutes}} min read</span>
+                    <em *ngIf="article.edited_at"> ・ Updated on {{article.edited_at|date:'MMM d'}}</em>
+                    <span> ・ {{article.reading_time_minutes}} min read</span>
                 </span>
                 <span id="action-space" class="mb-4 s:mb-0"></span>
             </div>
