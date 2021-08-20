@@ -1,2 +1,6 @@
 <app-videos-header></app-videos-header>
-<app-videos-list-container></app-videos-list-container>
+<div scrollTracker (scrollingFinished)="onScrollingFinished()">
+<ng-container *ngFor="let videos of videosList$|push" >
+    <app-video-card [video]="videos"></app-video-card>
+</ng-container>
+</div>

@@ -14,19 +14,19 @@ export class VideoslistApiService {
     getVideoslist(
       params?: Record<string, string>
     ): Observable<VideosList[]> {
-      const newParams = this.createObjectToParams(params);
+      const newParams = new HttpParams({ fromObject: params }).toString();
       return this.http.get<VideosList[]>(
         `${environment.baseApi}/videos?${newParams}`
       );
     }
   
-    createObjectToParams(params?: Record<string, string>) {
-      let requestParams = new HttpParams();
-      if(params){
-         requestParams = requestParams.set('page', params.page);
-         requestParams = requestParams.set('signature', params.signature);
-      }
-      return requestParams.toString();
-    }
+    // createObjectToParams(params?: Record<string, string>) {
+    //   let requestParams = new HttpParams();
+    //   if(params){
+    //      requestParams = requestParams.set('page', params.page);
+    //      requestParams = requestParams.set('signature', params.signature);
+    //   }
+    //   return requestParams.toString();
+    // }
   }
   
