@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
+import { ArticleApiService } from 'src/app/global/services/article/article-api.service';
 import { Article } from '../../../../models/articles';
-import { ArticleApiService } from './article-api.service';
 
 interface ArticlesState {
   articles: Article[];
@@ -15,14 +15,22 @@ export class ArticleStore extends ComponentStore<ArticlesState> {
   readonly articles$ = this.select((state) => state.articles);
   readonly featuredArticle$ = this.select((state) => state.featured);
   readonly setArticles = this.updater(
-    (state: ArticlesState, articles: Article[]) => ({
-      ...state,
-      articles: articles.splice(1),
-      featured: articles[0],
-    })
+    (state: ArticlesState, articles: Article[]) => {
+      let index = 0;
+      articles.find((article, idx) => {
+        index = idx;
+        return article.cover_image;
+      });
+      let featured = articles.splice(index, 1)[0];
+      return {
+        ...state,
+        featured: featured,
+        articles: articles,
+      };
+    }
   );
   readonly getArticles = this.effect(() =>
-    this.articleApiS.getArticles().pipe(
+    this.articleApiS.getArticles({ state: 'rising' }).pipe(
       tapResponse(
         (articles) => this.setArticles(articles),
         (error) => this.logError(error)

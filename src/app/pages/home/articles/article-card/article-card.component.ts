@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/articles';
 
 @Component({
@@ -6,11 +6,13 @@ import { Article } from 'src/app/models/articles';
   templateUrl: './article-card.component.html',
   styleUrls: ['./article-card.component.scss'],
 })
-export class ArticleCardComponent implements OnInit {
+export class ArticleCardComponent implements OnChanges {
   @Input() article!: Article;
+  uriSection = '';
   constructor() {}
-  
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.uriSection =
+      this.article?.organization?.slug || this.article.user.username;
   }
 }

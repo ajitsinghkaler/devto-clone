@@ -1,0 +1,9 @@
+<aside>
+    <app-reactions [reactions]="reaction$|push"></app-reactions>
+</aside>
+<ng-container *rxLet="article$;let article">
+    <app-article-details *ngIf="article" [article]="article"></app-article-details>
+</ng-container>
+<ng-container *rxLet="user$;let user">
+    <app-user-detail *ngIf="user" [user]="user"></app-user-detail>
+</ng-container>
