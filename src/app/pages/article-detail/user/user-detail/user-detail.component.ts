@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserDetails } from 'src/app/models/user';
 
 @Component({
@@ -6,10 +6,6 @@ import { UserDetails } from 'src/app/models/user';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss'],
 })
-export class UserDetailComponent implements OnInit {
-  @Input() user!: UserDetails
-
-  constructor() {}
-
-  ngOnInit(): void {}
+export class UserDetailComponent {
+  @Input() user!: UserDetails;
 }

@@ -6,9 +6,6 @@ import { ArticleDetails } from 'src/app/models/articles';
   templateUrl: './article-details.component.html',
   styleUrls: ['./article-details.component.scss'],
 })
-export class ArticleDetailsComponent implements OnInit {
+export class ArticleDetailsComponent {
   @Input() article!: ArticleDetails;
-  constructor() {}
-
-  ngOnInit(): void {}
 }
