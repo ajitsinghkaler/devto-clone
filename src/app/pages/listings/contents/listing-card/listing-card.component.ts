@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Listing } from 'src/app/models/listings';
+
 
 @Component({
   selector: 'app-listing-card',
@@ -8,9 +9,15 @@ import { Listing } from 'src/app/models/listings';
 })
 export class ListingCardComponent implements OnInit {
   @Input() listing!:Listing;
+  @Output() selectedTag = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  filterbyTag(tag:string){
+    this.selectedTag.emit(tag);
   }
 
 }

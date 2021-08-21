@@ -9,9 +9,12 @@
     <div class="listing-tags n-m">
       <a
         class="listing-tag-link"
-        href=""
+        href="/listings?t={{tag}}"
+        (click)="filterbyTag(tag);$event.preventDefault()"
         *ngFor="let tag of listing.tags; let i = index"
       >
+      <!-- queryParamsHandling="merge"
+      [queryParams]="{t:tag}" -->
         <span  class="listing-tag-prefix"
           >#</span
         >{{ tag }}

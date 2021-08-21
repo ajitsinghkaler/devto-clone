@@ -13,6 +13,7 @@ interface ListingsState {
   providedIn: 'root',
 })
 export class ListingsStore extends ComponentStore<ListingsState> {
+  selectedTagsMap = new Set();
   readonly listings$: Observable<Listings> = this.select((state) => {
     return state.listings;
   });
@@ -29,10 +30,10 @@ export class ListingsStore extends ComponentStore<ListingsState> {
   }
 
   getListings = this.effect(
-    (activatedRoute$: Observable<ListingCategory>) => {
-      return activatedRoute$.pipe(
-        switchMap((categoryParam) => {
-          return this.listingsApiS.getListings(categoryParam).pipe(
+    (allQueryParams$: Observable<[ListingCategory, string | undefined]>) => {
+      return allQueryParams$.pipe(
+        switchMap(([categoryParam,tags]) => {
+          return this.listingsApiS.getListings(categoryParam,tags).pipe(
             tapResponse(
               (listings) => {
                 return this.loadListings(listings.result);
