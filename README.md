@@ -9,6 +9,12 @@ Rest we will add stuff as needed and think about it in various scenario's as we 
 
 Article drops: [ajitblogs.com](https://ajitblogs.com/)
 
+## Contributing
+
+Thanks for your interest in contributing! Read up on our guidelines for
+[contributing](https://github.com/ajitsinghkaler/devto-clone/blob/master/CONTRIBUTING.md)
+
+
 ## Contributors
 
 <a href="https://github.com/ajitsinghkaler/devto-clone/graphs/contributors">
