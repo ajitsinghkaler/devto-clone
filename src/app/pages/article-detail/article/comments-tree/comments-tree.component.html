@@ -1,0 +1,7 @@
+<header class="flex justify-between">
+    <h2>Discussion <span>({{commentsCount}})</span></h2>
+    <button class="subscribe-btn btn" type="button">Subscribe</button>
+</header>
+<div *rxLet="comments$;let comments" class="comments">
+    <app-comments [comments]="comments"></app-comments>
+</div>

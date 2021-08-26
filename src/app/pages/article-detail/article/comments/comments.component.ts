@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { CommentsStore } from '../services/comments.store';
-
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
+import { Comment } from 'src/app/models/comment';
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss'],
 })
-export class CommentsComponent implements OnInit {
-  comments$ = this.commentStore.comments$;
-  constructor(private commentStore: CommentsStore) {}
-
-  ngOnInit(): void {}
+export class CommentsComponent{
+  @Input() comments: Comment[] = [];
+  constructor(public cdRef:ChangeDetectorRef) {}
 }
