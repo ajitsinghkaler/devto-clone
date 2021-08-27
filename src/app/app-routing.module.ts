@@ -14,13 +14,6 @@ const routes: Routes = [
           import('./pages/home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: ':user/:slug',
-        loadChildren: () =>
-          import('./pages/article-detail/article-detail.module').then(
-            (m) => m.ArticleDetailModule
-          ),
-      },
-      {
         path: 'videos',
         loadChildren: () =>
           import('./pages/videos/videos.module').then((m) => m.VideosModule),
@@ -32,6 +25,13 @@ const routes: Routes = [
             (m) => m.ListingsModule
           ),
       },
+      {
+        path: ':user/:slug',
+        loadChildren: () =>
+          import('./pages/article-detail/article-detail.module').then(
+            (m) => m.ArticleDetailModule
+          ),
+      }
     ],
   },
 ];

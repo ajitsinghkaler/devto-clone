@@ -3,13 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { UserStore } from 'src/app/global/services/user/user.store';
 import { ArticleDetailStore } from './article/services/article-detail.store';
+import { CommentsStore } from './article/services/comments.store';
 import { UserArticlesStore } from './user/services/user-articles.store';
 
 @Component({
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
-  providers: [ArticleDetailStore, UserStore],
+  providers: [ArticleDetailStore, UserStore, CommentsStore],
 })
 export class ArticleDetailComponent implements OnInit {
   article$ = this.articleDetailStore.article$.pipe(
@@ -18,6 +19,7 @@ export class ArticleDetailComponent implements OnInit {
         this.userStore.getUser(article.user.username);
         this.articleUserStore.getArticles({ username: article.user.username });
         this.articleDetailStore.getReactions(article.id);
+        this.commentsStore.getComments(article.id);
       }
     })
   );
@@ -28,6 +30,7 @@ export class ArticleDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private userStore: UserStore,
     private articleUserStore: UserArticlesStore,
+    private commentsStore: CommentsStore
   ) {}
 
   ngOnInit(): void {

@@ -9,6 +9,7 @@ import { ReactionsComponent } from './article/reactions/reactions.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
 import { ArticleDetailComponent } from './article-detail.component';
 import { LetModule, PushModule } from '@rx-angular/template';
+import { CommentsTreeComponent } from './article/comments-tree/comments-tree.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LetModule, PushModule } from '@rx-angular/template';
     ReactionsComponent,
     ReadMoreComponent,
     ArticleDetailComponent,
+    CommentsTreeComponent,
   ],
   imports: [
     RouterModule.forChild([

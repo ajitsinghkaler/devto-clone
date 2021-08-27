@@ -384,3 +384,70 @@ app-article-details {
     }
   }
 }
+
+app-comments {
+  details {
+    position: relative;
+  }
+  .comment-border {
+    border-radius: 5px;
+    background: #fff;
+    color: rgb(8, 9, 10);
+    box-shadow: rgba(8, 9, 10, 0.1) 0px 0px 0px 1px;
+    overflow-wrap: anywhere;
+    padding: 0.25rem;
+    width: 100%;
+  }
+
+  summary.closed {
+    display: block;
+    align-items: center;
+    transform: initial;
+    top: 0;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #64707d;
+    padding: 0.25rem 0.5rem;
+    font-style: italic;
+    border-radius: 5px;
+    background: #f9fafa;
+    margin-bottom: 1rem;
+  }
+
+  .comment-header {
+    padding: 0.5rem 0.75rem 0 0.25rem;
+  }
+
+  .comment-username {
+    padding: 0.5rem;
+  }
+
+  .comments-body {
+    margin-bottom: 2rem;
+  }
+
+  .comment-inner-text {
+    font-size: 1.125rem;
+    padding: 0 0.75rem;
+    margin: 0.5rem 0 1rem;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .comment-avatar {
+    width: 2rem;
+    margin-right: 0.5rem;
+    margin-top: 0.75rem;
+    height: 2rem;
+    img {
+      border-radius: 100%;
+      height: 100%;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+  .app-comments .app-comments .app-comments .app-comments {
+    padding-left: 0;
+  }
+}
