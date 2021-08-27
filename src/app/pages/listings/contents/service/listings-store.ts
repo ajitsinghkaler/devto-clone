@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ListingCategory, Listings } from 'src/app/models/listings';
 import { ListingsApiService } from './listings-api.service';
@@ -13,6 +13,11 @@ interface ListingsState {
   providedIn: 'root',
 })
 export class ListingsStore extends ComponentStore<ListingsState> {
+  public listingTagsSet = new Set();
+  public selectedListingTags$ = new BehaviorSubject<string[] | null>(null);
+  public setListingTags(tags:string[] | null){
+    this.selectedListingTags$.next(tags);
+  }
   readonly listings$: Observable<Listings> = this.select((state) => {
     return state.listings;
   });
@@ -28,19 +33,21 @@ export class ListingsStore extends ComponentStore<ListingsState> {
     super({ listings: [] });
   }
 
-  getListings = this.effect((activatedRoute$: Observable<ListingCategory>) =>
-    activatedRoute$.pipe(
-      switchMap((categoryParam) =>
-        this.listingsApiS.getListings(categoryParam).pipe(
-          tapResponse(
-            (listings) => {
-              return this.loadListings(listings.result);
-            },
-            (error) => this.logError(error)
-          )
-        )
-      )
-    )
+  getListings = this.effect(
+    (allQueryParams$: Observable<[ListingCategory, string | undefined]>) => {
+      return allQueryParams$.pipe(
+        switchMap(([categoryParam,tags]) => {
+          return this.listingsApiS.getListings(categoryParam,tags).pipe(
+            tapResponse(
+              (listings) => {
+                return this.loadListings(listings.result);
+              },
+              (error) => this.logError(error)
+            )
+          );
+        })
+      );
+    }
   );
 
   logError(error: unknown) {
