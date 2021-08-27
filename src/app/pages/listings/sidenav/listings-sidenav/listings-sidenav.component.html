@@ -3,8 +3,12 @@
         <input class="header-search-input" type="text" name="q" placeholder="Search..." autocomplete="off"
             title="Search for articles" aria-label="search" />
         <div class="p-t">
-            <span>
-                
+            <span (click)="$event.preventDefault()" class="listing-tag filter" *ngFor="let tag of listingTags$|push">
+                    <a (click)="$event.stopPropagation()" class="listing-tag-link" routerLink="./" [queryParams]="{t:tag}" >
+                        <span class="tag-prefix">#</span>
+                        <span>{{tag}}</span>
+                        <span (click)="$event.stopImmediatePropagation();removeTag(tag)" class="remove-tag">×</span>
+                    </a>
             </span>
         </div>
     </form>

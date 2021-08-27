@@ -9,7 +9,7 @@ import { Listing } from 'src/app/models/listings';
 })
 export class ListingCardComponent implements OnInit {
   @Input() listing!:Listing;
-  @Output() selectedTag = new EventEmitter();
+  @Output() selectedListingTags = new EventEmitter();
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class ListingCardComponent implements OnInit {
   }
 
   filterbyTag(tag:string){
-    this.selectedTag.emit(tag);
+    this.selectedListingTags.emit(tag);
   }
 
 }

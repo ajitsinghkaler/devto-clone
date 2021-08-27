@@ -7,25 +7,50 @@ import { ListingsStore } from '../service/listings-store';
 @Component({
   selector: 'app-listings-content',
   templateUrl: './listings-content.component.html',
-  styleUrls: ['./listings-content.component.scss']
+  styleUrls: ['./listings-content.component.scss'],
 })
 export class ListingsContentComponent implements OnInit {
   hasPagination = false;
-  listingStore$ = this.listingsStore.listings$.pipe(tap(listing=>this.hasPagination = listing?.length === 75));
+  listingTagsSet = this.listingsStore.listingTagsSet;
+  listingStore$ = this.listingsStore.listings$.pipe(
+    tap((listing) => (this.hasPagination = listing?.length === 75))
+  );
 
-
-  constructor(private listingsStore:ListingsStore,private router:Router,private activatedRoute:ActivatedRoute) { }
+  constructor(
+    private listingsStore: ListingsStore,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    const combineAllParams$ = combineLatest([this.activatedRoute.params.pipe((map((param)=>param.category))),this.activatedRoute.queryParams.pipe(
-      map((query)=>query?.t)
-    )]).pipe(tap(console.log));
+    const combineAllParams$ = combineLatest([
+      this.activatedRoute.params.pipe(map((param) => param.category)),
+      this.activatedRoute.queryParams.pipe(map((query) => query?.t)).pipe(
+        tap((listingTagString) => {
+          if (!this.listingTagsSet.size && listingTagString) {
+            this.listingTagsSet.add(listingTagString);
+          }
+          this.listingsStore.setListingTags(
+            listingTagString ? this.splitTags(listingTagString) : null
+          );
+        })
+      ),
+    ]);
     this.listingsStore.getListings(combineAllParams$);
-  } 
+  }
 
-  onFilterByTag(tag:string):void{
-    this.listingsStore.selectedTagsMap.add(tag);
-    const queryParams = [...this.listingsStore.selectedTagsMap].join(',');
-    this.router.navigate([], { relativeTo:this.activatedRoute,queryParams: { t:queryParams} });
+  splitTags(tags: string): string[] {
+    return tags.split(',');
+  }
+
+  onFilterByTag(tag: string): void {
+    this.listingTagsSet.add(tag);
+    console.log([...this.listingTagsSet]);
+    const listingTags = [...this.listingTagsSet] as string[];
+    const allListingTagsQueryParamsString = listingTags.join(',');
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { t: allListingTagsQueryParamsString },
+    });
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ListingCategory, Listings } from 'src/app/models/listings';
 import { ListingsApiService } from './listings-api.service';
@@ -13,7 +13,11 @@ interface ListingsState {
   providedIn: 'root',
 })
 export class ListingsStore extends ComponentStore<ListingsState> {
-  selectedTagsMap = new Set();
+  public listingTagsSet = new Set();
+  public selectedListingTags$ = new BehaviorSubject<string[] | null>(null);
+  public setListingTags(tags:string[] | null){
+    this.selectedListingTags$.next(tags);
+  }
   readonly listings$: Observable<Listings> = this.select((state) => {
     return state.listings;
   });
