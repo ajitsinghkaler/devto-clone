@@ -1,0 +1,29 @@
+
+
+
+.listing-sidenav{
+    padding: 0;
+    a {
+        width: 100%;
+        padding: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        color: #202428;
+        border-radius: 5px;
+        &:hover,
+        &:active {
+          background-color: rgba(8, 9, 10, 0.05);
+          color: #323ebe;
+        }
+      }
+}
+.listing-sidenav .active{
+    background: #fff;
+   
+}
+form{
+  padding-bottom: 1.5rem;
+}
+.p-t{
+  padding-top: 0.5rem;
+}

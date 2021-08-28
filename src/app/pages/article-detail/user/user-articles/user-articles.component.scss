@@ -1,0 +1,66 @@
+header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eef0f1;
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .see-all-link {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #3b49df;
+  }
+}
+
+.listing-item {
+  display: block;
+  padding: 1rem;
+  border-bottom: 1px solid #eef0f1;
+  color: #202428;
+  &:hover {
+    background-color: #fff;
+    .title {
+      color: #323ebe;
+    }
+  }
+}
+
+.listing-type {
+  color: #64707d;
+  font-size: 0.875rem;
+  padding-top: 0.25rem;
+}
+
+.create-listing {
+  font-weight: 500;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #202428;
+  display: block;
+}
+
+:host {
+  background-color: #f9fafa;
+  color: #202428;
+  box-shadow: 0 0 0 1px rgba(8, 9, 10, 0.05);
+  display: block;
+  border-radius: 5px;
+}
+
+.article-tag {
+  font-size: 0.875rem;
+  line-height: 1.3;
+  border-radius: 5px;
+  padding: 0.25rem;
+//   display: contents;
+  margin-right: 0.25rem;
+  color: #64707d;
+}
+
+.article-tags {
+  margin-left: -0.25rem;
+  padding-top: 0.25rem;
+  display: inline;
+}

@@ -10,16 +10,8 @@
 
         </a>
     </header>
-    <div class="followed-tags" style="max-height: 42vh;">
-        <div><a title="angular tag" href="/t/angular">#angular</a></div>
-        <div><a title="javascript tag" href="/t/javascript">#javascript</a></div>
-        <div><a title="typescript tag" href="/t/typescript">#typescript</a></div>
-        <div><a title="devops tag" href="/t/devops">#devops</a></div>
-        <div><a title="css tag" href="/t/css">#css</a></div>
-        <div><a title="hiring tag" href="/t/hiring">#hiring</a></div>
-        <div><a title="npm tag" href="/t/npm">#npm</a></div>
-        <div><a title="python tag" href="/t/python">#python</a></div>
-        <div><a title="productivity tag" href="/t/productivity">#productivity</a></div>
-        <div><a title="career tag" href="/t/career">#career</a></div>
+    <div *rxLet="tags$; let tags; let err = $error;" class="followed-tags" style="max-height: 42vh;">
+        <div *ngFor="let tag of tags"><a title="{{tag.name}} tag" href="/t/{{tag.name}}">#{{tag.name}}</a></div>
     </div>
+    <ng-template #suspense>loading</ng-template>
 </nav>
