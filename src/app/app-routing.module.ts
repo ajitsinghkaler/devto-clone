@@ -35,7 +35,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '**', pathMatch: 'prefix', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
