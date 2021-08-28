@@ -1,0 +1,9 @@
+:host {
+  display: grid;
+  grid-gap: 1rem;
+  /*
+    minmax is used becasue of grid blowout because of the pre tag
+    For details refer https://css-tricks.com/preventing-a-grid-blowout/ 
+  */
+  grid-template-columns: 4rem minmax(0, 7fr) minmax(0, 3fr);
+}

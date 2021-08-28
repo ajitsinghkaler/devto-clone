@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from 'src/app/global/not-found/not-found.component';
 import { ContainerComponent } from './global/container/container.component';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
           import('./pages/home/home.module').then((m) => m.HomeModule),
       },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', component: NotFoundComponent },
     ],
   },
 ];

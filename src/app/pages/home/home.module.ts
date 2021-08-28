@@ -12,7 +12,9 @@ import { ArticleHeaderComponent } from './articles/article-header/article-header
 import { HomeComponent } from './home.component';
 import { LetModule, PushModule } from '@rx-angular/template';
 import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
-
+import { ListingsComponent } from './rightbar/listings/listings.component';
+import { RightbarContainerComponent } from './rightbar/rightbar-container/rightbar-container.component';
+import { TagArticleComponent } from './rightbar/tag-article/tag-article.component';
 @NgModule({
   declarations: [
     SidebarComponent,
@@ -24,7 +26,10 @@ import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
     ArticleContainerComponent,
     ArticleHeaderComponent,
     HomeComponent,
-    DateagoPipe
+    DateagoPipe,
+    ListingsComponent,
+    RightbarContainerComponent,
+    TagArticleComponent,
   ],
   imports: [
     LetModule,

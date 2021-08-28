@@ -1,0 +1,47 @@
+<aside>
+    <div class="aside-card">
+        <div class="aside-username">
+            <a href="/{{user.username}}" class="flex">
+                <span class="aside-avatar">
+                    <img [src]="user.profile_image" alt="" loading="lazy">
+                </span>
+                <span class="aside-name">{{user.name}}</span>
+            </a>
+        </div>
+        <div class="aside-summary">
+            {{user.summary}}
+        </div>
+        &nbsp;
+
+        <div>
+            <ul class="m-0 p-0">
+                <li *ngIf="user.location">
+                    <div class="key">
+                        Location
+                    </div>
+                    <div class="value">
+                        <time datetime="2020-12-08T08:18:06Z" class="date">{{user.location}}</time>
+                    </div>
+                </li>
+                <li>
+                    <div class="key">
+                        Joined
+                    </div>
+                    <div class="value">
+                        <time datetime="2020-12-08T08:18:06Z" class="date">{{user.joined_at}}</time>
+                    </div>
+                </li>
+                <li *ngIf="user.website_url">
+                    <div class="key">
+                        Website
+                    </div>
+                    <div class="value">
+                        <time datetime="2020-12-08T08:18:06Z" class="date">{{user.website_url}}</time>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <app-user-articles [name]="user.name"></app-user-articles>
+</aside>

@@ -1,0 +1,14 @@
+<section>
+    <header class="flex align-center">
+        <h3>#{{tag}}</h3>
+    </header>
+
+    <div *rxLet="article$; let articles; let err=$error;">
+        <a *ngFor="let article of articles" class="listing-item" href="/listings/forhire/react-js-195j">
+            <div>{{article.title}}</div>
+            <div class="listing-type">{{article.comments_count}} comments</div>
+        </a>
+    </div>
+    <ng-template #suspense>loading</ng-template>
+    <ng-template #error>loading</ng-template>
+</section>
