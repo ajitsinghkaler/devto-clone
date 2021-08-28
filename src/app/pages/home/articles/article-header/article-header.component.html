@@ -1,20 +1,18 @@
-<header class="flex justify-between">
+
+<header class="header flex justify-between align-center">
+  <div class="title-post">
     <h1 class="subtitle">Posts</h1>
-
-    <nav class="flex" aria-label="View posts by">
-        <ul class="tabs-list flex">
-            <li *ngFor="let tab of tabs">
-                <a [class.active]="tab === selectedTab" class="tab-item pointer">{{tab|titlecase}}</a>
-            </li>
-        </ul>
+  </div>
+  <div class="navbar">
+    <nav class="nav-bar" aria-label="View posts by" role="navigation">
+      <ul class="tabs-list flex" role="list">
+        <li class="tab-list-item" *ngFor="let tab of tabs" role="listitem" [class.active-tab]="tab === selectedTab">
+          <a class="tab-item pointer" role="link">
+            {{ tab | titlecase }}
+          </a>
+        </li>
+        <span class="focus-border"></span>
+      </ul>
     </nav>
-
-    <!-- <select class="crayons-select s:hidden ml-2 s:ml-auto w-auto" id="feed-filter-select" aria-label="feed-filter-select">
-      <option value="/" selected="">Feed</option>
-      <option value="/top/week">Week</option>
-      <option value="/top/month">Month</option>
-      <option value="/top/year">Year</option>
-      <option value="/top/infinity">Infinity</option>
-      <option value="/latest">Latest</option>
-    </select> -->
+  </div>
 </header>
