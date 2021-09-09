@@ -26,12 +26,19 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'user/username',
+        loadChildren: () =>
+          import('./pages/user-profile/user-profile.module').then(
+            (m) => m.UserProfileModule
+          ),
+      },
+      {
         path: ':user/:slug',
         loadChildren: () =>
           import('./pages/article-detail/article-detail.module').then(
             (m) => m.ArticleDetailModule
           ),
-      }
+      },
     ],
   },
 ];

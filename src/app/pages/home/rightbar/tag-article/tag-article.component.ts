@@ -6,7 +6,7 @@ import { ArticleTagsStore } from '../services/article-tags.store';
   selector: 'app-tag-article',
   templateUrl: './tag-article.component.html',
   styleUrls: ['./tag-article.component.scss'],
-  providers: [ArticleTagsStore],
+  viewProviders: [ArticleTagsStore],
 })
 export class TagArticleComponent implements OnInit {
   @Input() tag: string = '';

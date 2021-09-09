@@ -29,7 +29,7 @@
                 <div class="comment-username">{{comment.user.name}}</div>
                 <div> ・ {{comment.created_at|date:'MMM d'}}</div>
             </div>
-            <div class="comment-inner-text" [innerHtml]="comment.body_html">
+            <div class="comment-inner-text body-html" [innerHtml]="comment.body_html">
             </div>
         </div>
     </div>

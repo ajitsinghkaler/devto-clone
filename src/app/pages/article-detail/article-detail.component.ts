@@ -10,7 +10,7 @@ import { UserArticlesStore } from './user/services/user-articles.store';
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
-  providers: [ArticleDetailStore, UserStore, CommentsStore],
+  viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
 })
 export class ArticleDetailComponent implements OnInit {
   article$ = this.articleDetailStore.article$.pipe(

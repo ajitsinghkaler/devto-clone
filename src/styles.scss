@@ -144,8 +144,9 @@ ol[class] {
   }
 }
 
-app-article-details {
-  .article-body {
+app-article-details,
+app-comments {
+  .body-html {
     padding: 2rem 4rem;
     font-size: 1.25rem;
     overflow-wrap: break-word;
@@ -449,5 +450,38 @@ app-comments {
   }
   .app-comments .app-comments .app-comments .app-comments {
     padding-left: 0;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.post-button {
+  color: #fff;
+  margin-right: 0.5rem;
+  background-color: #3b49df;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: #323ebe;
+  }
+}
+
+ngneat-dialog {
+  .ngneat-close-dialog {
+    top: 35px;
+    right: 45px;
+  }
+  .ngneat-dialog-content {
+    background-color: transparent;
   }
 }
