@@ -1,6 +1,11 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/articles';
 
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
+import { RouterLink, RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-article-card',
   templateUrl: './article-card.component.html',
@@ -16,3 +21,10 @@ export class ArticleCardComponent implements OnChanges {
       this.article?.organization?.slug || this.article.user.username;
   }
 }
+
+@NgModule({
+  declarations: [ArticleCardComponent, DateagoPipe],
+  imports: [CommonModule,RouterModule.forChild([])],
+  exports: [ArticleCardComponent],
+})
+export class ArticleCardModule {}

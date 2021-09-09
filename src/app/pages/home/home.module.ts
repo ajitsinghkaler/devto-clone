@@ -6,12 +6,11 @@ import { SidebarTagsComponent } from './sidebar/sidebar-tags/sidebar-tags.compon
 import { SidebarAdvertisementComponent } from './sidebar/sidebar-advertisement/sidebar-advertisement.component';
 import { SidebarSocialLinksComponent } from './sidebar/sidebar-social-links/sidebar-social-links.component';
 import { FeaturedArticleComponent } from './articles/featured-article/featured-article.component';
-import { ArticleCardComponent } from './articles/article-card/article-card.component';
+import { ArticleCardComponent, ArticleCardModule } from './articles/article-card/article-card.component';
 import { ArticleContainerComponent } from './articles/article-container/article-container.component';
 import { ArticleHeaderComponent } from './articles/article-header/article-header.component';
 import { HomeComponent } from './home.component';
 import { LetModule, PushModule } from '@rx-angular/template';
-import { DateagoPipe } from 'src/app/global/pipes/dateago/dateago.pipe';
 import { ListingsComponent } from './rightbar/listings/listings.component';
 import { RightbarContainerComponent } from './rightbar/rightbar-container/rightbar-container.component';
 import { TagArticleComponent } from './rightbar/tag-article/tag-article.component';
@@ -22,17 +21,17 @@ import { TagArticleComponent } from './rightbar/tag-article/tag-article.componen
     SidebarAdvertisementComponent,
     SidebarSocialLinksComponent,
     FeaturedArticleComponent,
-    ArticleCardComponent,
     ArticleContainerComponent,
     ArticleHeaderComponent,
     HomeComponent,
-    DateagoPipe,
+
     ListingsComponent,
     RightbarContainerComponent,
     TagArticleComponent,
   ],
   imports: [
     LetModule,
+    ArticleCardModule,
     PushModule,
     CommonModule,
     RouterModule.forChild([

@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  padding: 1rem;
+  padding-top: 2rem;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+header {
+  border-radius: 5px;
+  background: #fff;
+  color: #08090a;
+  box-shadow: 0 0 0 1px rgba(8, 9, 10, 0.1);
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.profile-header {
+  position: relative;
+}
+
+img {
+  padding: 0.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+}
+
+.profile-header-details {
+  padding: 1.5rem;
+  h1 {
+    font-weight: 800;
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .user-summary {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #202408;
+  }
+}
+
+.profile-header-meta {
+  font-size: 0.875rem;
+  color: #64707d;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  .item {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+a {
+  color: #64707d;
+}
