@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TABS } from 'src/app/constants/app.constants';
 
 @Component({
   selector: 'app-article-header',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ArticleHeaderComponent {
   selectedTab = 'feed';
-  tabs = ['feed', 'week', 'month', 'year', 'infinity', 'latest'];
+  tabs = TABS;
+  constructor() {}
 }
