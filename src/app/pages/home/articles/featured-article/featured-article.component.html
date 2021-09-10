@@ -1,7 +1,0 @@
-<a routerLink="/{{this.featured?.organization?.slug || this.featured?.user?.username}}/{{featured?.slug}}"
-    class="featured-img" style.background-image="url({{featured?.cover_image}})"></a>
-<!-- Todo make featured title big -->
-<app-article-card *ngIf="featured" [article]="featured">
-    <h3 routerLink="/{{this.featured?.organization?.slug || this.featured?.user?.username}}/{{featured.slug}}"
-        class="featured-title">{{featured?.title}}</h3>
-</app-article-card>
