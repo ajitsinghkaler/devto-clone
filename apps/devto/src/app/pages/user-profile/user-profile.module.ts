@@ -7,10 +7,7 @@ import { LetModule, PushModule } from '@rx-angular/template';
 import { ArticleCardModule } from '../home/articles/article-card/article-card.component';
 
 @NgModule({
-  declarations: [
-    UserProfileComponent,
-    UserHeaderComponent,
-  ],
+  declarations: [UserProfileComponent, UserHeaderComponent],
   imports: [
     ArticleCardModule,
     LetModule,

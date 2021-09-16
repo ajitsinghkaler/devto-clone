@@ -21,9 +21,7 @@ const routes: Routes = [
       {
         path: 'listings',
         loadChildren: () =>
-          import('@devto/listings').then(
-            (m) => m.ListingsModule
-          ),
+          import('@devto/listings').then((m) => m.ListingsModule),
       },
       {
         path: 'users/:username',

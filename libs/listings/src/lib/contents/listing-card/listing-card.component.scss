@@ -87,7 +87,7 @@ It will not allow our innerHTML element style to be overriden unless we use ng-d
 }
 
 .author-profile::after {
-  content: "";
+  content: '';
   border: 1px solid #08090a;
   opacity: 0.15;
   width: 100%;

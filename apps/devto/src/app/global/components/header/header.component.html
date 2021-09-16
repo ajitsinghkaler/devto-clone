@@ -69,12 +69,65 @@
           ></path>
         </svg>
       </button>
-      <button class="btn icon-button">
-        <img
-          src="https://res.cloudinary.com/practicaldev/image/fetch/s--CpZlDEKK--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/298681/cea07f4f-852d-44d2-84c5-b5806a5dd542.jpeg"
-          class="avatar-image"
-        />
-      </button>
+      <div class="dropdown flex align-center">
+        <button class="btn icon-button">
+          <img
+            src="https://res.cloudinary.com/practicaldev/image/fetch/s--CpZlDEKK--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/298681/cea07f4f-852d-44d2-84c5-b5806a5dd542.jpeg"
+            class="avatar-image"
+          />
+        </button>
+        <div class="dropdown-content">
+          <ul class="p-0 m-0">
+            <li class="user-profile">
+              <a class="nav-link crayons-link--block" href="/ajitsinghkaler">
+                <div class="d-grid">
+                  <span class="fw-medium block">Ajit Singh</span>
+                  <small class="fs-s color-base-50">@ajitsinghkaler</small>
+                </div>
+              </a>
+            </li>
+
+            <li class="nav-links-outer">
+              <a href="/dashboard" class="nav-link crayons-link--block"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-links-outer">
+              <a href="/new" class="nav-link crayons-link--block"
+                >Create Post</a
+              >
+            </li>
+            <li class="nav-links-outer">
+              <a href="/readinglist" class="nav-link crayons-link--block"
+                >Reading list</a
+              >
+            </li>
+            <li
+              class="
+                border-0 border-b-1 border-solid border-base-20
+                nav-links-outer
+                pb-1
+              "
+            >
+              <a
+                href="/settings"
+                class="nav-link crayons-link--block"
+                id="second-last-nav-link"
+                >Settings</a
+              >
+            </li>
+
+            <li class="user-profile sign-out-element">
+              <a
+                href="/signout_confirm"
+                class="nav-link crayons-link--block"
+                id="last-nav-link"
+                >Sign Out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

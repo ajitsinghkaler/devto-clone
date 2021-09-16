@@ -1,8 +1,7 @@
 <article class="card article mb-4">
   <header>
-    <div class="article-cover">
+    <div class="article-cover" *ngIf="article.cover_image">
       <img
-        *ngIf="article.cover_image"
         [src]="article.cover_image"
         width="1000"
         height="420"
@@ -23,9 +22,8 @@
         <a routerLink="/{{ article.user.username }}" class="flex align-center">
           <div class="article-avatar">
             <img
-              class="crayons-avatar__image"
               [src]="article.user.profile_image_90"
-              alt=""
+              [alt]="article.user.username"
             />
           </div>
           <div class="article-user-name">{{ article.user.name }}</div>
@@ -40,7 +38,7 @@
           >
 
           <em *ngIf="article.edited_at">
-            ・ Updated on {{ article.edited_at | date: "MMM d" }}</em
+            ・ Updated on {{ article.edited_at | date: 'MMM d' }}</em
           >
           <span> ・ {{ article.reading_time_minutes }} min read</span>
         </span>
@@ -49,6 +47,8 @@
     </div>
   </header>
 
-  <div class="article-body" [innerHTML]="article?.body_html"></div>
-  <app-comments></app-comments>
+  <div class="body-html" [innerHTML]="article?.body_html"></div>
+  <app-comments-tree
+    [commentsCount]="article.comments_count"
+  ></app-comments-tree>
 </article>

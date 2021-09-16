@@ -6,8 +6,6 @@ import { UserDetails } from '@devto/core/models';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss'],
 })
-export class UserDetailComponent  {
+export class UserDetailComponent {
   @Input() user!: UserDetails;
-
-
 }

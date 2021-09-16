@@ -34,7 +34,6 @@ header {
   box-sizing: border-box;
 }
 
-
 .avatar-image {
   border-radius: 100%;
   height: 2rem;
@@ -42,7 +41,7 @@ header {
   vertical-align: bottom;
   &:after {
     border: 1px solid #08090a;
-    content: "";
+    content: '';
     opacity: 0.15;
     width: 100%;
     height: 100%;

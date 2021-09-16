@@ -8,5 +8,4 @@ import { AuthorListing } from '@devto/core/models';
 })
 export class ListingCardComponent {
   @Input() listing!: AuthorListing;
-
 }

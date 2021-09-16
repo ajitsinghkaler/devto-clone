@@ -24,7 +24,7 @@ export class ArticleCardComponent implements OnChanges {
 
 @NgModule({
   declarations: [ArticleCardComponent, DateagoPipe],
-  imports: [CommonModule,RouterModule.forChild([])],
+  imports: [CommonModule, RouterModule.forChild([])],
   exports: [ArticleCardComponent],
 })
 export class ArticleCardModule {}

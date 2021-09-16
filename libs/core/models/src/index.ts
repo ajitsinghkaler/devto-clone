@@ -1,6 +1,6 @@
 export * from './lib/articles';
 export * from './lib/listing';
-export * from './lib/listings'
+export * from './lib/listings';
 
 export * from './lib/organisation';
 export * from './lib/reaction-data';

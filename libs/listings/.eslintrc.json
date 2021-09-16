@@ -21,11 +21,11 @@
           "error",
           {
             "type": "element",
-            "prefix": ["devto","app"],
+            "prefix": ["devto", "app"],
             "style": "kebab-case"
           }
         ],
-        "@typescript-eslint/no-non-null-assertion" : "off"
+        "@typescript-eslint/no-non-null-assertion": "off"
       }
     },
     {
