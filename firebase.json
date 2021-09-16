@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "devto",
-      "public": "dist/devto",
+      "public": "dist/apps/devto",
       "ignore": [
         "**/.*"
       ],
