@@ -1,0 +1,28 @@
+{
+  "npmScope": "devto",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "projects": {
+    "core-models": {
+      "tags": []
+    },
+    "devto": {
+      "tags": []
+    },
+    "environments": {
+      "tags": []
+    },
+    "listings": {
+      "tags": []
+    }
+  }
+}
