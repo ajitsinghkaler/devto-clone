@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: '<app-header></app-header> <router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'devto';
-}
+export class AppComponent {}

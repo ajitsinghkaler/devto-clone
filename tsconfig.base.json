@@ -25,6 +25,7 @@
       "@devto/global-services": ["libs/global-services/src/index.ts"],
       "@devto/home": ["libs/home/src/index.ts"],
       "@devto/listings": ["libs/listings/src/index.ts"],
+      "@devto/styles": ["libs/styles/src/index.ts"],
       "@devto/user-profile": ["libs/user-profile/src/index.ts"],
       "@devto/videos": ["libs/videos/src/index.ts"]
     },

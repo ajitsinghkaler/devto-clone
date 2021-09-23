@@ -148,7 +148,7 @@
             "tsConfig": "apps/devto/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/devto/src/favicon.ico", "apps/devto/src/assets"],
-            "styles": ["apps/devto/src/styles.scss"],
+            "styles": ["libs/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -431,6 +431,47 @@
             "lintFilePatterns": [
               "libs/listings/src/**/*.ts",
               "libs/listings/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "styles": {
+      "projectType": "library",
+      "root": "libs/styles",
+      "sourceRoot": "libs/styles/src",
+      "prefix": "devto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/styles"],
+          "options": {
+            "project": "libs/styles/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/styles/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/styles/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/styles"],
+          "options": {
+            "jestConfig": "libs/styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/styles/src/**/*.ts",
+              "libs/styles/src/**/*.html"
             ]
           }
         }
