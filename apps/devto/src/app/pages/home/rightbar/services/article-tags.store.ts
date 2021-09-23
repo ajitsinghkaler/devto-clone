@@ -3,7 +3,7 @@ import { Article } from '@devto/core/models';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { ArticleApiService } from '../../../../global/services/article/article-api.service';
+import { ArticleApiService } from '@devto/global-services';
 
 interface ArticlesState {
   articles: Article[];

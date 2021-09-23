@@ -190,6 +190,88 @@
         }
       }
     },
+    "global-components": {
+      "projectType": "library",
+      "root": "libs/global-components",
+      "sourceRoot": "libs/global-components/src",
+      "prefix": "devto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/global-components"],
+          "options": {
+            "project": "libs/global-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/global-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/global-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/global-components"],
+          "options": {
+            "jestConfig": "libs/global-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/global-components/src/**/*.ts",
+              "libs/global-components/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "global-services": {
+      "projectType": "library",
+      "root": "libs/global-services",
+      "sourceRoot": "libs/global-services/src",
+      "prefix": "devto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/global-services"],
+          "options": {
+            "project": "libs/global-services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/global-services/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/global-services/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/global-services"],
+          "options": {
+            "jestConfig": "libs/global-services/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/global-services/src/**/*.ts",
+              "libs/global-services/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "listings": {
       "projectType": "library",
       "root": "libs/listings",

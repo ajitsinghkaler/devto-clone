@@ -1,7 +1,7 @@
-import { VideosList } from './videos-list.store';
+import { VideosListStore } from './videos-list.store';
 
-describe('VideosList', () => {
+describe('VideosListStore', () => {
   it('should create an instance', () => {
-    expect(new VideosList()).toBeTruthy();
+    expect(new VideosListStore()).toBeTruthy();
   });
 });

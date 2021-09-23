@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserStore } from '../../global/services/user/user.store';
+import { UserStore } from '@devto/global-services';
 import { UserArticlesStore } from '../article-detail/user/services/user-articles.store';
 
 @Component({

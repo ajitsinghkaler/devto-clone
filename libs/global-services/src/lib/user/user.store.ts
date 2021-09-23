@@ -9,9 +9,7 @@ interface UserState {
   user: UserDetails | null;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class UserStore extends ComponentStore<UserState> {
   readonly user$ = this.select((state) => state.user);
   readonly setUser = this.updater((state: UserState, user: UserDetails) => ({

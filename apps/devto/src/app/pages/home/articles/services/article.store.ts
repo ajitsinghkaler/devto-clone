@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { ArticleApiService } from '../../../../global/services/article/article-api.service';
+import { ArticleApiService } from '@devto/global-services';
 import { Article } from '@devto/core/models';
 
 interface ArticlesState {

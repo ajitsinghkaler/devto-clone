@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
-import { UserStore } from '../../global/services/user/user.store';
+import { UserStore } from '@devto/global-services';
 import { ArticleDetailStore } from './article/services/article-detail.store';
 import { CommentsStore } from './article/services/comments.store';
 import { UserArticlesStore } from './user/services/user-articles.store';

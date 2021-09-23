@@ -21,6 +21,12 @@
     "environments": {
       "tags": []
     },
+    "global-components": {
+      "tags": []
+    },
+    "global-services": {
+      "tags": []
+    },
     "listings": {
       "tags": []
     }

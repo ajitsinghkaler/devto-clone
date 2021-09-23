@@ -19,6 +19,8 @@
     "paths": {
       "@devto/core/models": ["libs/core/models/src/index.ts"],
       "@devto/environments": ["libs/environments/src/index.ts"],
+      "@devto/global-components": ["libs/global-components/src/index.ts"],
+      "@devto/global-services": ["libs/global-services/src/index.ts"],
       "@devto/listings": ["libs/listings/src/index.ts"]
     },
     "rootDir": "."

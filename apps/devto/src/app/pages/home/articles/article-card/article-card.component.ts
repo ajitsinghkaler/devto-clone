@@ -3,7 +3,7 @@ import { Article } from '@devto/core/models';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DateagoPipe } from '../../../../global/pipes/dateago/dateago.pipe';
+import { DateagoPipe } from '@devto/global-services';
 import { RouterModule } from '@angular/router';
 
 @Component({
