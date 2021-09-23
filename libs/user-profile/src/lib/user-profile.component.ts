@@ -1,12 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserStore } from '@devto/global-services';
-import { UserArticlesStore } from '../../../../libs/article-detail/src/lib/user/services/user-articles.store';
+import { UserArticlesStore } from '@devto/global-services';
 
 @Component({
   selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss'],
+  template: `<ng-container *rxLet="user$; let user">
+      <app-user-header *ngIf="user" [user]="user"></app-user-header>
+    </ng-container>
+
+    <ng-container *ngFor="let article of articles$ | push">
+      <app-article-card [article]="article"></app-article-card>
+    </ng-container> `,
+  styles: [
+    `
+      app-article-card {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 994px;
+      }
+    `,
+  ],
   viewProviders: [UserStore, UserArticlesStore],
 })
 export class UserProfileComponent implements OnInit {

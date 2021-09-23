@@ -313,6 +313,47 @@
         }
       }
     },
+    "global-constants": {
+      "projectType": "library",
+      "root": "libs/global-constants",
+      "sourceRoot": "libs/global-constants/src",
+      "prefix": "devto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/global-constants"],
+          "options": {
+            "project": "libs/global-constants/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/global-constants/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/global-constants/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/global-constants"],
+          "options": {
+            "jestConfig": "libs/global-constants/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/global-constants/src/**/*.ts",
+              "libs/global-constants/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "global-services": {
       "projectType": "library",
       "root": "libs/global-services",

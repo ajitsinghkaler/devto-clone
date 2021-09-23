@@ -2,7 +2,24 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-advertisement',
-  templateUrl: './sidebar-advertisement.component.html',
-  styleUrls: ['./sidebar-advertisement.component.scss'],
+  template: `<div class="ad-widget">
+    <a href="https://shop.dev.to/"
+      ><img
+        src="https://res.cloudinary.com/practicaldev/image/fetch/s--H03EII_F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://thepracticaldev.s3.amazonaws.com/i/yulj7krmm6s7owlk3l7d.jpg"
+        style="margin-top: 15px"
+        class="w-100"
+        loading="lazy" /></a
+    ><a href="https://shop.dev.to/">
+      <h2 class="m-0 ad-decription">New Champion-Brand DEV Wear is Here!</h2>
+    </a>
+  </div> `,
+  styles: [
+    `
+      .ad-decription {
+        text-align: center;
+        line-height: 1.29em;
+      }
+    `,
+  ],
 })
 export class SidebarAdvertisementComponent {}

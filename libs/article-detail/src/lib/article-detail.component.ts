@@ -4,12 +4,35 @@ import { tap } from 'rxjs/operators';
 import { UserStore } from '@devto/global-services';
 import { ArticleDetailStore } from './article/services/article-detail.store';
 import { CommentsStore } from './article/services/comments.store';
-import { UserArticlesStore } from './user/services/user-articles.store';
+import { UserArticlesStore } from '@devto/global-services';
 
 @Component({
   selector: 'app-article-detail',
-  templateUrl: './article-detail.component.html',
-  styleUrls: ['./article-detail.component.scss'],
+  template: `<aside>
+      <app-reactions [reactions]="reaction$ | push"></app-reactions>
+    </aside>
+    <ng-container *rxLet="article$; let article">
+      <app-article-details
+        *ngIf="article"
+        [article]="article"
+      ></app-article-details>
+    </ng-container>
+    <ng-container *rxLet="user$; let user">
+      <app-user-detail *ngIf="user" [user]="user"></app-user-detail>
+    </ng-container> `,
+  styles: [
+    `
+      :host {
+        display: grid;
+        grid-gap: 1rem;
+        /*
+          minmax is used becasue of grid blowout because of the pre tag
+          For details refer https://css-tricks.com/preventing-a-grid-blowout/ 
+        */
+        grid-template-columns: 4rem minmax(0, 7fr) minmax(0, 3fr);
+      }
+    `,
+  ],
   viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
 })
 export class ArticleDetailComponent implements OnInit {

@@ -3,8 +3,13 @@ import { ArticleStore } from '../services/article.store';
 
 @Component({
   selector: 'app-article-container',
-  templateUrl: './article-container.component.html',
-  styleUrls: ['./article-container.component.scss'],
+  template: `<app-article-header></app-article-header>
+    <app-featured-article
+      [featured]="featuredArticle$ | push"
+    ></app-featured-article>
+    <ng-container *ngFor="let article of articles$ | push">
+      <app-article-card [article]="article"></app-article-card>
+    </ng-container> `,
 })
 export class ArticleContainerComponent {
   articles$ = this.articleStore.articles$;

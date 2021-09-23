@@ -1,7 +1,0 @@
-<ng-container *rxLet="user$; let user">
-  <app-user-header *ngIf="user" [user]="user"></app-user-header>
-</ng-container>
-
-<ng-container *ngFor="let article of articles$ | push">
-  <app-article-card [article]="article"></app-article-card>
-</ng-container>

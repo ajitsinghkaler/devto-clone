@@ -5,7 +5,7 @@ import { LetModule, PushModule } from '@rx-angular/template';
 import { VideosComponent } from './videos.component';
 import { VideosHeaderComponent } from './videos-list/videos-header/videos-header.component';
 import { VideoCardComponent } from './videos-list/video-card/video-card.component';
-import { ScrollTrackerDirective } from './videos-list/shared/scroll-tracker.directive';
+import { ScrollTrackerDirective } from '@devto/global-components';
 @NgModule({
   declarations: [
     VideosComponent,

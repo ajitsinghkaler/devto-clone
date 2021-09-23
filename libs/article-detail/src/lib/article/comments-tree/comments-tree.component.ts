@@ -1,16 +1,27 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { Component, Input } from '@angular/core';
 import { CommentsStore } from '../services/comments.store';
 
 @Component({
   selector: 'app-comments-tree',
-  templateUrl: './comments-tree.component.html',
-  styleUrls: ['./comments-tree.component.scss'],
+  template: `<header class="flex justify-between">
+      <h2>
+        Discussion <span>({{ commentsCount }})</span>
+      </h2>
+      <button class="subscribe-btn btn" type="button">Subscribe</button>
+    </header>
+    <div *rxLet="comments$; let comments" class="comments">
+      <app-comments [comments]="comments"></app-comments>
+    </div> `,
+  styles: [
+    `
+      :host {
+        display: block;
+        app-comments {
+          padding-left: 1.75rem;
+        }
+      }
+    `,
+  ],
 })
 export class CommentsTreeComponent {
   @Input() commentsCount = 0;

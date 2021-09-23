@@ -1,0 +1,1 @@
+export const ARTICLE_HEADER_TABS = ['feed', 'week', 'month', 'year', 'infinity', 'latest'];

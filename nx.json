@@ -30,6 +30,9 @@
     "global-components": {
       "tags": []
     },
+    "global-constants": {
+      "tags": []
+    },
     "global-services": {
       "tags": []
     },

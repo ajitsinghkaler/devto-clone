@@ -4,8 +4,18 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-container',
-  templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss'],
+  template: `<router-outlet></router-outlet> `,
+  styles: [
+    `
+      :host {
+        display: block;
+        max-width: var(--screen-width);
+        padding: 1rem;
+        margin: auto;
+        box-sizing: border-box;
+      }
+    `,
+  ],
 })
 export class ContainerComponent {}
 

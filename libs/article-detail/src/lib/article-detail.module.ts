@@ -6,7 +6,6 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserArticlesComponent } from './user/user-articles/user-articles.component';
 import { RouterModule } from '@angular/router';
 import { ReactionsComponent } from './article/reactions/reactions.component';
-import { ReadMoreComponent } from './read-more/read-more.component';
 import { ArticleDetailComponent } from './article-detail.component';
 import { LetModule, PushModule } from '@rx-angular/template';
 import { CommentsTreeComponent } from './article/comments-tree/comments-tree.component';
@@ -18,7 +17,6 @@ import { CommentsTreeComponent } from './article/comments-tree/comments-tree.com
     UserDetailComponent,
     UserArticlesComponent,
     ReactionsComponent,
-    ReadMoreComponent,
     ArticleDetailComponent,
     CommentsTreeComponent,
   ],

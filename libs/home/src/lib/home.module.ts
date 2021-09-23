@@ -6,10 +6,7 @@ import { SidebarTagsComponent } from './sidebar/sidebar-tags/sidebar-tags.compon
 import { SidebarAdvertisementComponent } from './sidebar/sidebar-advertisement/sidebar-advertisement.component';
 import { SidebarSocialLinksComponent } from './sidebar/sidebar-social-links/sidebar-social-links.component';
 import { FeaturedArticleComponent } from './articles/featured-article/featured-article.component';
-import {
-  ArticleCardComponent,
-  ArticleCardModule,
-} from './articles/article-card/article-card.component';
+import { ArticleCardModule } from '@devto/global-components';
 import { ArticleContainerComponent } from './articles/article-container/article-container.component';
 import { ArticleHeaderComponent } from './articles/article-header/article-header.component';
 import { HomeComponent } from './home.component';

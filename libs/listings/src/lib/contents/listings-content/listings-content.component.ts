@@ -5,8 +5,31 @@ import { ListingsStore } from '../service/listings-store';
 
 @Component({
   selector: 'app-listings-content',
-  templateUrl: './listings-content.component.html',
-  styleUrls: ['./listings-content.component.scss'],
+  template: `<div class="listing-container">
+    <div class="listings-cards" appMasonary>
+      <app-listing-card
+        *ngFor="let listing of listingStore$ | push"
+        [attr.id]="listing.id"
+        [listing]="listing"
+      ></app-listing-card>
+    </div>
+    <div class="flex justify-center" *ngIf="hasPagination">
+      <button class="secondary-button">Load More...</button>
+    </div>
+  </div> `,
+  styles: [
+    `
+      .listing-container {
+        font-size: 16px;
+      }
+      .listings-cards {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        margin-bottom: 1.5rem;
+      }
+    `,
+  ],
 })
 export class ListingsContentComponent implements OnInit {
   hasPagination = false;

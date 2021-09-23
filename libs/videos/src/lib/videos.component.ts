@@ -3,8 +3,12 @@ import { VideosListStore } from './videos-list/services/videos-list.store';
 
 @Component({
   selector: 'app-videos',
-  templateUrl: './videos.component.html',
-  styleUrls: ['./videos.component.scss'],
+  template: `<app-videos-header></app-videos-header>
+    <div scrollTracker (scrollingFinished)="onScrollingFinished()">
+      <ng-container *ngFor="let videos of videosList$ | push">
+        <app-video-card [video]="videos"></app-video-card>
+      </ng-container>
+    </div> `,
 })
 export class VideosComponent implements OnInit {
   page = '0';
