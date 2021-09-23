@@ -12,6 +12,12 @@
     "tsconfig.base.json": "*"
   },
   "projects": {
+    "article-detail": {
+      "tags": []
+    },
+    "core-app-routes": {
+      "tags": []
+    },
     "core-models": {
       "tags": []
     },
@@ -27,7 +33,16 @@
     "global-services": {
       "tags": []
     },
+    "home": {
+      "tags": []
+    },
     "listings": {
+      "tags": []
+    },
+    "user-profile": {
+      "tags": []
+    },
+    "videos": {
       "tags": []
     }
   }
