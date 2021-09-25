@@ -21,6 +21,7 @@ Article drops: [ajitblogs.com](https://ajitblogs.com/)
 1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-august-27/
 1. https://ajitblogs.com/problems-faced-while-creating-comments-section-with-a-tree-like-data-structure/
 2. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-sept-10/
+3. [Move you angular cli app to Nx](https://ajitblogs.com/move-you-angular-cli-app-to-nx/)
 
 # Live stream
 
