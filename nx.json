@@ -22,7 +22,8 @@
       "tags": []
     },
     "devto": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies":["styles"]
     },
     "environments": {
       "tags": []
