@@ -23,7 +23,11 @@
     },
     "devto": {
       "tags": [],
-      "implicitDependencies":["styles"]
+      "implicitDependencies": ["styles"]
+    },
+    "devto-e2e": {
+      "tags": [],
+      "implicitDependencies": ["devto"]
     },
     "environments": {
       "tags": []
