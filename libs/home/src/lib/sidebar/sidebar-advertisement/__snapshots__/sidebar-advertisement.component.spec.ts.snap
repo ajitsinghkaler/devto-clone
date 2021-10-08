@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarAdvertisementComponent should render 1`] = `
+<app-sidebar-advertisement
+  __ngContext__={[Function LRootView]}
+>
+  <div>
+    <a
+      href="https://shop.dev.to/"
+    >
+      <img
+        class="w-100"
+        loading="lazy"
+        src="https://res.cloudinary.com/practicaldev/image/fetch/s--H03EII_F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://thepracticaldev.s3.amazonaws.com/i/yulj7krmm6s7owlk3l7d.jpg"
+        style="margin-top: 15px;"
+      />
+    </a>
+    <a
+      href="https://shop.dev.to/"
+    >
+      <h2
+        class="m-0 ad-decription"
+      >
+        New Champion-Brand DEV Wear is Here!
+      </h2>
+    </a>
+  </div>
+</app-sidebar-advertisement>
+`;

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-advertisement',
-  template: `<div class="ad-widget">
+  template: `<div>
     <a href="https://shop.dev.to/"
       ><img
         src="https://res.cloudinary.com/practicaldev/image/fetch/s--H03EII_F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://thepracticaldev.s3.amazonaws.com/i/yulj7krmm6s7owlk3l7d.jpg"

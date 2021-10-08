@@ -1,5 +1,11 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
+import { HomeModule } from '../../home.module';
+import { SidebarAdvertisementComponent } from '../sidebar-advertisement/sidebar-advertisement.component';
+import { SidebarSocialLinksComponent } from '../sidebar-social-links/sidebar-social-links.component';
+import { SidebarTagsComponent } from '../sidebar-tags/sidebar-tags.component';
 import { SidebarComponent } from './sidebar.component';
 
 describe('SidebarComponent', () => {
@@ -8,7 +14,14 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SidebarComponent],
+      declarations: [
+        SidebarComponent,
+        SidebarAdvertisementComponent,
+        SidebarTagsComponent,
+        SidebarSocialLinksComponent,
+      ],
+
+      imports: [HomeModule, HttpClientTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 
@@ -20,5 +33,9 @@ describe('SidebarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render', () => {
+    expect(fixture).toMatchSnapshot();
   });
 });
