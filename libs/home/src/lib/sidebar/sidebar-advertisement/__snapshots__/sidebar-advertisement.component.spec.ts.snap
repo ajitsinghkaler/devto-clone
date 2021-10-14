@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SidebarAdvertisementComponent should render 1`] = `
-<app-sidebar-advertisement
-  __ngContext__={[Function LRootView]}
+<div
+  id="root1"
 >
   <div>
     <a
@@ -25,5 +25,5 @@ exports[`SidebarAdvertisementComponent should render 1`] = `
       </h2>
     </a>
   </div>
-</app-sidebar-advertisement>
+</div>
 `;

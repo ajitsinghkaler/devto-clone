@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomeComponent should render with image 1`] = `
-<app-home
-  __ngContext__={[Function LRootView]}
+exports[`HomeComponent should render 1`] = `
+<div
+  id="root1"
 >
   <app-sidebar>
     <aside
@@ -890,9 +890,7 @@ exports[`HomeComponent should render with image 1`] = `
         </nav>
       </app-sidebar-tags>
       <app-sidebar-advertisement>
-        <div
-          class="ad-widget"
-        >
+        <div>
           <a
             href="https://shop.dev.to/"
           >
@@ -915,7 +913,8 @@ exports[`HomeComponent should render with image 1`] = `
         </div>
       </app-sidebar-advertisement>
     </aside>
-  </app-sidebar><app-article-container>
+  </app-sidebar>
+  <app-article-container>
     <app-article-header>
       <header
         class="flex justify-between"
@@ -988,7 +987,8 @@ exports[`HomeComponent should render with image 1`] = `
       
     </app-featured-article>
     
-  </app-article-container><app-rightbar-container>
+  </app-article-container>
+  <app-rightbar-container>
     <aside>
       <app-listings>
         <section>
@@ -1086,5 +1086,5 @@ exports[`HomeComponent should render with image 1`] = `
       
     </aside>
   </app-rightbar-container>
-</app-home>
+</div>
 `;

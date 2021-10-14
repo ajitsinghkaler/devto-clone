@@ -23,6 +23,6 @@ describe('SidebarAdvertisementComponent', () => {
   });
 
   it('should render', () => {
-    expect(fixture).toMatchSnapshot();
+    expect(fixture.nativeElement).toMatchSnapshot();
   });
 });

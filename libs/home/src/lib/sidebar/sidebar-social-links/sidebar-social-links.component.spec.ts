@@ -21,4 +21,8 @@ describe('SidebarSocialLinksComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render', () => {
+    expect(fixture.nativeElement).toMatchSnapshot();
+  });
 });
