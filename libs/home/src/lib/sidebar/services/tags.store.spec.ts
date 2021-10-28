@@ -66,29 +66,14 @@ describe('TagsStore', () => {
     });
   });
 
-  it('tags$ property should return the current value of the store tags', (done) => {
-    store.setState({ tags: [mockTags[0]] });
+  it('should call the updater if effect is started', (done) => {
+    const spy = jest.spyOn(tagsApiService, 'getTags');
+    spy.mockReturnValue(of(mockTags));
     store.tags$.subscribe((tags) => {
-      expect(tags.length).toBe(1);
+      expect(tags.length).toBe(2);
+      expect(tags[1]).toEqual(mockTags[1]);
       done();
     });
-  });
-
-  it('should return the current value of the store tags', () => {
-    // spyOn(tagsApiService,'getTags')
     store.getTags();
-
-    console.log('6th test');
-    store.state$.subscribe((tags) => {
-      console.log(tags);
-      // expect(tags.tags.length).toBe(2);
-      // expect(tags.tags[1]).toEqual(mockTags[1]);
-    });
-    store.getTags();
-
-    store.tags$.subscribe(console.log);
-    // expect(tagsApiService.getTags).toHaveBeenCalled()
-    expect(1).toBe(1);
   });
 });
-
