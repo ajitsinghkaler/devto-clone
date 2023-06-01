@@ -7,21 +7,8 @@ I'm starting a new series in which we will create a dev.to clone in angular. I w
 
 Rest we will add stuff as needed and think about it in various scenario's as we go. I'll add stuff to github repo on Thursday and drop an article on what we did on Friday. Follow along if you want to learn more about Angular.
 
-Article drops: [ajitblogs.com](https://ajitblogs.com/)
+Article drops: [article]([https://ajitblogs.com/](https://dev.to/ajitsinghkaler))
 
-# Articles
-
-1. https://ajitblogs.com/creating-dev-to-clone-with-angular/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-july-16/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-july-23/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-july-30/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-august-6/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-august-13/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-august-20/
-1. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-august-27/
-1. https://ajitblogs.com/problems-faced-while-creating-comments-section-with-a-tree-like-data-structure/
-2. https://ajitblogs.com/updates-on-dev-to-clone-in-angular-sept-10/
-3. [Move you angular cli app to Nx](https://ajitblogs.com/move-you-angular-cli-app-to-nx/)
 
 # Live stream
 
